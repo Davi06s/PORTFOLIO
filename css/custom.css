@@ -1,0 +1,465 @@
+/* ==========================================================================
+   Modern, Professional & Futuristic Portfolio Redesign
+   ========================================================================== */
+
+/* Variables */
+:root {
+    /* Deep, professional dark theme colors */
+    --bg-main: #0a0e17;
+    /* Very dark blue/gray */
+    --bg-elevated: #111825;
+    /* Slightly lighter for cards/sections */
+    --bg-glass: rgba(17, 24, 37, 0.75);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-inverse: #ffffff;
+    /* Testo bianco forzato (es. bottoni/header) */
+
+    /* Elegant but futuristic accents */
+    --accent-primary: #00f0ff;
+    /* Neon cyan */
+    --accent-secondary: #8b5cf6;
+    /* Sleek purple */
+    --accent-glow: 0 0 15px rgba(0, 240, 255, 0.4);
+
+    /* Typography */
+    --font-heading: 'Orbitron', sans-serif;
+    /* Futuristic */
+    --font-body: 'Montserrat', sans-serif;
+    /* Professional, clean */
+
+    --transition-fast: all 0.2s ease;
+    --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius-lg: 16px;
+    --border-radius-sm: 8px;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.navbar-brand,
+.masthead-heading,
+.page-section-heading {
+    font-family: var(--font-heading) !important;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+}
+
+p.lead {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+/* Reset Bootstrap backgrounds that conflict */
+.bg-primary {
+    background: var(--bg-elevated) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bg-secondary {
+    background-color: transparent !important;
+}
+
+.text-secondary {
+    color: var(--accent-primary) !important;
+}
+
+/* Navbar - Glassmorphism (Modern/Professional) */
+#mainNav {
+    background: var(--bg-glass) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: var(--transition-normal);
+}
+
+#mainNav.navbar-shrink {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#mainNav .navbar-brand {
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+#mainNav .navbar-brand:hover {
+    color: var(--accent-primary);
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+#mainNav .nav-link {
+    color: var(--text-secondary) !important;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: var(--transition-fast);
+    margin: 0 0.25rem;
+    border-radius: var(--border-radius-sm);
+}
+
+#mainNav .nav-link:hover,
+#mainNav .nav-link.active {
+    color: var(--accent-primary) !important;
+    background: rgba(0, 240, 255, 0.08) !important;
+}
+
+#mainNav .navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary) !important;
+}
+
+/* Masthead (Hero Section) */
+.masthead {
+    background: radial-gradient(circle at center, #1a2235 0%, var(--bg-main) 100%) !important;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Subtle grid pattern for futuristic touch */
+.masthead::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.masthead .container {
+    position: relative;
+    z-index: 1;
+}
+
+.masthead .masthead-avatar {
+    border-radius: 50%;
+    border: 2px solid rgba(0, 240, 255, 0.3);
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+    transition: var(--transition-normal);
+}
+
+.masthead .masthead-avatar:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: var(--accent-glow);
+}
+
+.masthead .masthead-subheading {
+    font-family: var(--font-body);
+    color: var(--accent-primary);
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+}
+
+/* Custom Dividers */
+.divider-custom {
+    margin: 1.5rem 0 2.5rem !important;
+}
+
+.divider-custom .divider-custom-line {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    height: 1px !important;
+    max-width: 100px;
+}
+
+.divider-custom .divider-custom-icon {
+    color: var(--accent-primary) !important;
+    font-size: 1.5rem;
+}
+
+.divider-light .divider-custom-line {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.divider-light .divider-custom-icon {
+    color: var(--text-primary) !important;
+}
+
+/* Portfolio Section */
+.portfolio {
+    background-color: var(--bg-main);
+}
+
+.portfolio .col-md-6 {
+    display: flex;
+    /* Make columns flex containers */
+}
+
+.portfolio .portfolio-item {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    background: var(--bg-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-normal);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio .portfolio-item .img-fluid {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Fix for transparent PNGs like Trello and Slack which require a background context */
+.portfolio .row>div:not(:first-child) .portfolio-item .img-fluid {
+    background-color: #ffffff;
+    object-fit: contain;
+    padding: 2rem;
+}
+
+.portfolio .portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 240, 255, 0.1) inset;
+    border-color: rgba(0, 240, 255, 0.3);
+}
+
+.portfolio .portfolio-item .portfolio-item-caption {
+    background: rgba(10, 14, 23, 0.85) !important;
+    backdrop-filter: blur(4px);
+    transition: var(--transition-normal) !important;
+}
+
+.portfolio .portfolio-item .portfolio-item-caption i {
+    color: var(--accent-primary) !important;
+    font-size: 3rem;
+    transform: scale(0.8);
+    transition: var(--transition-normal);
+}
+
+.portfolio .portfolio-item:hover .portfolio-item-caption i {
+    transform: scale(1);
+    text-shadow: var(--accent-glow);
+}
+
+/* About Section */
+#about {
+    background-color: var(--bg-elevated) !important;
+}
+
+#about .lead {
+    color: var(--text-secondary);
+}
+
+.about-image {
+    transition: var(--transition-normal);
+}
+
+.about-image:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--accent-glow) !important;
+    border-color: rgba(0, 240, 255, 0.6) !important;
+}
+
+/* Contact Section */
+#contact {
+    background-color: var(--bg-main);
+}
+
+/* Forms */
+.form-floating>label {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-primary) !important;
+    border-radius: var(--border-radius-sm) !important;
+    transition: var(--transition-fast);
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.15) !important;
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    color: var(--accent-primary);
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+    background-color: transparent !important;
+}
+
+.form-floating>label::after {
+    background-color: transparent !important;
+}
+
+.form-floating>.form-control:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--bg-elevated) inset !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+}
+
+/* Buttons */
+.btn {
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 30px !important;
+    padding: 0.75rem 2rem;
+    transition: var(--transition-fast);
+}
+
+.btn-primary {
+    background: rgba(0, 240, 255, 0.1) !important;
+    border: 1px solid var(--accent-primary) !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: var(--accent-primary) !important;
+    color: var(--bg-main) !important;
+    box-shadow: var(--accent-glow);
+}
+
+.btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: var(--text-primary) !important;
+    background: transparent !important;
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--text-primary) !important;
+}
+
+/* Footer & Copyright */
+.footer {
+    background-color: var(--bg-elevated) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+}
+
+.footer h4 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+.copyright {
+    background-color: #05070a !important;
+    color: var(--text-secondary);
+}
+
+.btn-social {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-primary) !important;
+    transition: var(--transition-fast);
+}
+
+.btn-social:hover {
+    background-color: var(--accent-primary) !important;
+    border-color: var(--accent-primary) !important;
+    color: var(--bg-main) !important;
+    transform: translateY(-3px);
+    box-shadow: var(--accent-glow);
+}
+
+/* Modals */
+.portfolio-modal .modal-content {
+    background-color: var(--bg-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-modal .modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.portfolio-modal h2 {
+    color: var(--text-primary);
+}
+
+.portfolio-modal p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.portfolio-modal .btn-close {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 0.75rem;
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 0.7;
+    transition: var(--transition-fast);
+}
+
+.portfolio-modal .btn-close:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Text Selection */
+::selection {
+    background-color: rgba(0, 240, 255, 0.3);
+    color: #fff;
+}
+
+/* Custom Webkit Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 240, 255, 0.2);
+    border-radius: 10px;
+    border: 2px solid var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 240, 255, 0.5);
+}
