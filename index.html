@@ -290,60 +290,30 @@
                     <!-- Form Container -->
                     <div class="p-4 p-md-5"
                         style="background: var(--bg-elevated); border-radius: var(--border-radius-lg); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <form id="contactForm" action="https://formspree.io/f/xkoqbwjp" method="POST">
                             <!-- Name input-->
                             <div class="form-floating mb-4">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..."
-                                    data-sb-validations="required" />
-                                <label for="name">Full name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                <input class="form-control" id="name" name="name" type="text" placeholder="Nome o Azienda..." required />
+                                <label for="name">Nome completo</label>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-4">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com"
-                                    data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.
-                                </div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" required />
+                                <label for="email">Indirizzo Email</label>
                             </div>
                             <!-- Phone number input-->
                             <div class="form-floating mb-4">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
-                                    data-sb-validations="required" />
-                                <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is
-                                    required.
-                                </div>
+                                <input class="form-control" id="phone" name="phone" type="tel" placeholder="(123) 456-7890" />
+                                <label for="phone">Numero di Telefono (Opzionale)</label>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-4">
-                                <textarea class="form-control" id="message" type="text"
-                                    placeholder="Enter your message here..." style="height: 12rem"
-                                    data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
-                                </div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-4">
-                                    <div class="fw-bolder text-white">Form submission successful!</div>
-                                    <span style="color: var(--text-secondary);">Grazie per avermi contattato, ti
-                                        risponderò al più presto.</span>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage">
-                                <div class="text-center text-danger mb-4">Error sending message!</div>
+                                <textarea class="form-control" id="message" name="message" placeholder="Scrivi il tuo messaggio qui..." style="height: 12rem" required></textarea>
+                                <label for="message">Messaggio</label>
                             </div>
                             <!-- Submit Button-->
                             <div class="d-grid">
-                                <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">
+                                <button class="btn btn-primary btn-xl" id="submitButton" type="submit">
                                     <i class="bi bi-send me-2"></i>Invia Messaggio
                                 </button>
                             </div>
@@ -583,11 +553,7 @@
         });
     </script>
 
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <!-- Modulo di contatto script rimosso (ora usa Formspree o server custom) -->
 </body>
 
 </html>
