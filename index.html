@@ -137,6 +137,26 @@
                         <img class="img-fluid" src="assets/img/portfolio/slack.png" alt="..." />
                     </div>
                 </div>
+                <!-- Portfolio Item 4-->
+                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="400">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                        <div class="position-relative w-100 before-after-cover" style="aspect-ratio: 4/3; overflow: hidden; border-radius: var(--border-radius-md); transform: translateZ(0);">
+                            <!-- DOPO -->
+                            <img class="img-fluid position-absolute top-0 start-0 w-100 h-100" src="assets/img/portfolio/dopo.png" alt="Dopo" style="object-fit: cover; object-position: top;" />
+                            
+                            <!-- PRIMA (clip-path animato) -->
+                            <img class="position-absolute top-0 start-0 w-100 h-100 before-img-clip" src="assets/img/portfolio/prima.png" alt="Prima" style="object-fit: cover; object-position: top; clip-path: inset(0 50% 0 0); transition: clip-path 0.7s cubic-bezier(0.2, 1, 0.2, 1); z-index: 1;" />
+                            
+                            <!-- Linea divisore muovibile -->
+                            <div class="position-absolute top-0 h-100 divider-line-move" style="left: 50%; width: 4px; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.5); transition: left 0.7s cubic-bezier(0.2, 1, 0.2, 1); transform: translateX(-50%); z-index: 2;"></div>
+                            
+                            <style>
+                                .before-after-cover:hover .before-img-clip { clip-path: inset(0 100% 0 0) !important; }
+                                .before-after-cover:hover .divider-line-move { left: 0% !important; opacity: 0; }
+                            </style>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Portfolio Additional Text -->
@@ -509,6 +529,69 @@
                                 </p>
                                 <a class="btn btn-primary" href="https://github.com/AlexandruD18/Slack-Clone.git"
                                     target="_blank">
+                                    <i class="fab fa-github"></i> Visualizza il codice su GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 4-->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
+                        aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Restyling Sito Web</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="bi bi-cpu"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Before & After Images PREMIUM-->
+                                <div class="container-fluid px-0 mb-5 mt-4">
+                                    <div class="row g-4 align-items-stretch">
+                                        <!-- Vecchio Design -->
+                                        <div class="col-md-6 text-start">
+                                            <div class="mb-2 ms-2">
+                                                <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--text-secondary); font-size: 0.9rem; letter-spacing: 1px; border: 1px solid rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 30px;">
+                                                    <i class="bi bi-clock-history me-1"></i> PRIMA
+                                                </span>
+                                            </div>
+                                            <div class="position-relative rounded-4 overflow-hidden shadow-sm" style="border: 2px dashed rgba(255,255,255,0.2); aspect-ratio: 16/10;">
+                                                <img class="img-fluid w-100 h-100" src="assets/img/portfolio/prima.png" alt="Sito Vecchio" style="object-fit: cover; object-position: top;" />
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Nuovo Design -->
+                                        <div class="col-md-6 text-start">
+                                            <div class="mb-2 ms-2">
+                                                <span class="badge bg-primary text-white" style="font-size: 0.9rem; letter-spacing: 1px; padding: 0.5rem 1rem; border-radius: 30px; box-shadow: var(--accent-glow);">
+                                                    <i class="bi bi-stars me-1 text-warning"></i> DOPO
+                                                </span>
+                                            </div>
+                                            <div class="position-relative rounded-4 overflow-hidden shadow-lg" style="border: 2px solid var(--accent-primary); aspect-ratio: 16/10;">
+                                                <img class="img-fluid w-100 h-100" src="assets/img/portfolio/dopo.png" alt="Sito Moderno" style="object-fit: cover; object-position: top;" />
+                                                <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                                    <span class="text-white fw-bold" style="font-family: var(--font-heading); font-size: 0.95rem;">Nuovo Risultato</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-4">Questo progetto consiste nel restyling completo di un sito web datato, trasformandolo in una piattaforma moderna, attrattiva e responsiva. L'obiettivo principale è stato quello di migliorare drasticamente l'esperienza utente (UX) e l'interfaccia grafica (UI) applicando le migliori pratiche dell'era moderna del web.
+                                </p>
+                                <a class="btn btn-primary" href="https://github.com/Davi06s/Sito-Moderno.git" target="_blank">
                                     <i class="fab fa-github"></i> Visualizza il codice su GitHub
                                 </a>
                             </div>
