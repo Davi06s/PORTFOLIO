@@ -26,6 +26,19 @@
     <link href="css/custom.css" rel="stylesheet" />
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    
+    <!-- Critical Style for Navbar visibility on Mobile -->
+    <style>
+        #mainNav {
+            background-color: #111825 !important;
+            transition: opacity 0.3s ease-in-out;
+        }
+        @media (min-width: 992px) {
+            #mainNav {
+                background-color: rgba(17, 24, 37, 0.75) !important;
+            }
+        }
+    </style>
 
     <!--[if gte mso 9]><xml>
 <mso:CustomDocumentProperties>
@@ -55,9 +68,9 @@
             <a class="navbar-brand" href="#page-top">Curriculum</a>
             <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
+                aria-expanded="false" aria-label="Toggle navigation" style="padding: 0.6rem 0.8rem; border: 1px solid rgba(0, 240, 255, 0.4);">
                 Menu
-                <i class="fas fa-bars"></i>
+                <i class="bi bi-list ms-2"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
@@ -241,92 +254,26 @@
             </div>
             <!-- Grid Items-->
             <div class="row justify-content-center pt-3">
-                <!-- Certificato 1 -->
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <div class="portfolio-item mx-auto shadow-sm p-4 text-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
-                        <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
-                        <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Informatica</h4>
-                        <p class="mb-4" style="color: var(--text-secondary); font-size: 0.9rem;">Forma-Temp</p>
-                        <a href="assets/certificati/attestato_informatica_forma-temp.pdf" target="_blank" class="btn btn-outline-primary mt-auto" style="border-radius: 30px;">
-                            <i class="bi bi-eye me-2"></i>Visualizza
-                        </a>
+                <!-- Ente Forma-Temp -->
+                <div class="col-md-6 mb-5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-item mx-auto shadow-sm p-4 text-center" data-bs-toggle="modal" data-bs-target="#certificatiModalFormaTemp" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 2px solid transparent; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--accent-primary)';" onmouseout="this.style.transform='none'; this.style.borderColor='transparent';">
+                        <img src="assets/img/formatemp-logo.png" alt="Forma-Temp Logo" style="width: 5rem; height: 5rem; object-fit: contain; margin-bottom: 1rem;">
+                        <h4 class="mb-3" style="font-size: 1.5rem; color: var(--text-primary); font-family: var(--font-heading);">Forma-Temp</h4>
+                        <p class="mb-4" style="color: var(--text-secondary); font-size: 1rem;">2 Certificati</p>
+                        <div class="btn btn-outline-primary mt-auto" style="border-radius: 30px;">
+                            <i class="bi bi-grid-fill me-2"></i>Sfoglia Certificati
+                        </div>
                     </div>
                 </div>
-                <!-- Certificato 2 -->
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <div class="portfolio-item mx-auto shadow-sm p-4 text-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
-                        <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
-                        <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Intelligenza Artificiale</h4>
-                        <p class="mb-4" style="color: var(--text-secondary); font-size: 0.9rem;">Forma-Temp</p>
-                        <a href="assets/certificati/attestato_intelligenza-artificiale_forma-temp.pdf" target="_blank" class="btn btn-outline-primary mt-auto" style="border-radius: 30px;">
-                            <i class="bi bi-eye me-2"></i>Visualizza
-                        </a>
-                    </div>
-                </div>
-                <!-- Certificato 3 -->
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <div class="portfolio-item mx-auto shadow-sm p-4 text-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
-                        <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
-                        <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Claude Code In Action</h4>
-                        <p class="mb-4" style="color: var(--text-secondary); font-size: 0.9rem;">Anthropic</p>
-                        <a href="assets/certificati/certificato_claude-code-in-action.pdf" target="_blank" class="btn btn-outline-primary mt-auto" style="border-radius: 30px;">
-                            <i class="bi bi-eye me-2"></i>Visualizza
-                        </a>
-                    </div>
-                </div>
-                <!-- Certificato 4 -->
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="400">
-                    <div class="portfolio-item mx-auto shadow-sm p-4 text-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
-                        <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
-                        <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Claude 101</h4>
-                        <p class="mb-4" style="color: var(--text-secondary); font-size: 0.9rem;">Anthropic</p>
-                        <a href="assets/certificati/certificato_Claude-101.pdf" target="_blank" class="btn btn-outline-primary mt-auto" style="border-radius: 30px;">
-                            <i class="bi bi-eye me-2"></i>Visualizza
-                        </a>
-                    </div>
-                </div>
-                <!-- Certificato 5 -->
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="500">
-                    <div class="portfolio-item mx-auto shadow-sm p-4 text-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
-                        <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
-                        <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Claude Cowork</h4>
-                        <p class="mb-4" style="color: var(--text-secondary); font-size: 0.9rem;">Anthropic</p>
-                        <a href="assets/certificati/certificato_Claude-Cowork.pdf" target="_blank" class="btn btn-outline-primary mt-auto" style="border-radius: 30px;">
-                            <i class="bi bi-eye me-2"></i>Visualizza
-                        </a>
-                    </div>
-                </div>
-                <!-- Certificato 6 -->
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <div class="portfolio-item mx-auto shadow-sm p-4 text-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
-                        <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
-                        <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">AI Fluency Framework Foundations</h4>
-                        <p class="mb-4" style="color: var(--text-secondary); font-size: 0.9rem;">Anthropic</p>
-                        <a href="assets/certificati/certificato_ai-fluency_framework-foundations.pdf" target="_blank" class="btn btn-outline-primary mt-auto" style="border-radius: 30px;">
-                            <i class="bi bi-eye me-2"></i>Visualizza
-                        </a>
-                    </div>
-                </div>
-                <!-- Certificato 7 -->
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <div class="portfolio-item mx-auto shadow-sm p-4 text-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
-                        <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
-                        <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">AI Fluency for Students</h4>
-                        <p class="mb-4" style="color: var(--text-secondary); font-size: 0.9rem;">Anthropic</p>
-                        <a href="assets/certificati/certificato_ai-fluency-for-students.pdf" target="_blank" class="btn btn-outline-primary mt-auto" style="border-radius: 30px;">
-                            <i class="bi bi-eye me-2"></i>Visualizza
-                        </a>
-                    </div>
-                </div>
-                <!-- Certificato 8 -->
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <div class="portfolio-item mx-auto shadow-sm p-4 text-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
-                        <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
-                        <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">AI Fluency for Nonprofits</h4>
-                        <p class="mb-4" style="color: var(--text-secondary); font-size: 0.9rem;">Anthropic</p>
-                        <a href="assets/certificati/certificato_ai-fluency-for-nonprofits.pdf" target="_blank" class="btn btn-outline-primary mt-auto" style="border-radius: 30px;">
-                            <i class="bi bi-eye me-2"></i>Visualizza
-                        </a>
+                <!-- Ente Anthropic -->
+                <div class="col-md-6 mb-5" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-item mx-auto shadow-sm p-4 text-center" data-bs-toggle="modal" data-bs-target="#certificatiModalAnthropic" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 2px solid transparent; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--accent-primary)';" onmouseout="this.style.transform='none'; this.style.borderColor='transparent';">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 176" fill="#ffffff" style="width: 5rem; height: 5rem; margin-bottom: 1rem;"><path d="M153.1 0H185.6L256 176H223.5L153.1 0Z"/><path d="M0 176L70.4 0H102.9L173.3 176H140.8L128.2 144.4H45.1L32.5 176H0ZM56.8 118.5H116.5L86.6 41.1L56.8 118.5Z"/></svg>
+                        <h4 class="mb-3" style="font-size: 1.5rem; color: var(--text-primary); font-family: var(--font-heading);">Anthropic</h4>
+                        <p class="mb-4" style="color: var(--text-secondary); font-size: 1rem;">6 Certificati</p>
+                        <div class="btn btn-outline-primary mt-auto" style="border-radius: 30px;">
+                            <i class="bi bi-grid-fill me-2"></i>Sfoglia Certificati
+                        </div>
                     </div>
                 </div>
             </div>
@@ -686,6 +633,131 @@
                                 <a class="btn btn-primary" href="https://github.com/Davi06s/Sito-Moderno.git" target="_blank">
                                     <i class="fab fa-github"></i> Visualizza il codice su GitHub
                                 </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificati Modals-->
+    <!-- Certificati Modal Forma-Temp -->
+    <div class="portfolio-modal modal fade" id="certificatiModalFormaTemp" tabindex="-1" aria-labelledby="certificatiModalFormaTemp" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="background-color: var(--bg-primary);">
+                <div class="modal-header border-0"><button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Certificati Forma-Temp</h2>
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><img src="assets/img/formatemp-logo.png" alt="Forma-Temp" style="width: 1.8rem; height: 1.8rem; object-fit: contain;"></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Grid -->
+                                <div class="row justify-content-center pt-3 g-4">
+                                    <div class="col-12 col-md-6 mb-4">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                            <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                                            <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Informatica</h4>
+                                            <a href="assets/certificati/attestato_informatica_forma-temp.pdf" target="_blank" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
+                                                <i class="bi bi-eye me-2"></i>Visualizza
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-4">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                            <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                                            <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Intelligenza Artificiale</h4>
+                                            <a href="assets/certificati/attestato_intelligenza-artificiale_forma-temp.pdf" target="_blank" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
+                                                <i class="bi bi-eye me-2"></i>Visualizza
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificati Modal Anthropic -->
+    <div class="portfolio-modal modal fade" id="certificatiModalAnthropic" tabindex="-1" aria-labelledby="certificatiModalAnthropic" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="background-color: var(--bg-primary);">
+                <div class="modal-header border-0"><button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Certificati Anthropic</h2>
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 176" fill="#ffffff" style="width: 1.8rem; height: 1.8rem;"><path d="M153.1 0H185.6L256 176H223.5L153.1 0Z"/><path d="M0 176L70.4 0H102.9L173.3 176H140.8L128.2 144.4H45.1L32.5 176H0ZM56.8 118.5H116.5L86.6 41.1L56.8 118.5Z"/></svg></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Grid -->
+                                <div class="row justify-content-center pt-3 g-4">
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                            <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                                            <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Claude Code In Action</h4>
+                                            <a href="assets/certificati/certificato_claude-code-in-action.pdf" target="_blank" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
+                                                <i class="bi bi-eye me-2"></i>Visualizza
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                            <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                                            <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Claude 101</h4>
+                                            <a href="assets/certificati/certificato_Claude-101.pdf" target="_blank" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
+                                                <i class="bi bi-eye me-2"></i>Visualizza
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                            <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                                            <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Claude Cowork</h4>
+                                            <a href="assets/certificati/certificato_Claude-Cowork.pdf" target="_blank" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
+                                                <i class="bi bi-eye me-2"></i>Visualizza
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                            <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                                            <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">AI Fluency Framework Foundations</h4>
+                                            <a href="assets/certificati/certificato_ai-fluency_framework-foundations.pdf" target="_blank" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
+                                                <i class="bi bi-eye me-2"></i>Visualizza
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                            <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                                            <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">AI Fluency for Students</h4>
+                                            <a href="assets/certificati/certificato_ai-fluency-for-students.pdf" target="_blank" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
+                                                <i class="bi bi-eye me-2"></i>Visualizza
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                            <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                                            <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">AI Fluency for Nonprofits</h4>
+                                            <a href="assets/certificati/certificato_ai-fluency-for-nonprofits.pdf" target="_blank" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
+                                                <i class="bi bi-eye me-2"></i>Visualizza
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

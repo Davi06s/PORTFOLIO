@@ -95,6 +95,16 @@ p.lead {
     transition: var(--transition-normal);
 }
 
+@media (max-width: 991.98px) {
+    #mainNav {
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: var(--bg-elevated) !important;
+    }
+}
+
 #mainNav.navbar-shrink {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -127,6 +137,20 @@ p.lead {
 #mainNav .nav-link.active {
     color: var(--accent-primary) !important;
     background: rgba(0, 240, 255, 0.08) !important;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: var(--bg-elevated);
+        margin-top: 1rem;
+        border-radius: var(--border-radius-md);
+        padding: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    #mainNav .nav-link {
+        padding: 1rem !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
 }
 
 #mainNav .navbar-toggler {
