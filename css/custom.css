@@ -35,6 +35,11 @@
 }
 
 /* Global Styles */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     background-color: var(--bg-main);
     color: var(--text-secondary);
@@ -114,6 +119,13 @@ p.lead {
     color: var(--text-primary);
     font-weight: 700;
     letter-spacing: 2px;
+}
+
+@media (max-width: 380px) {
+    #mainNav .navbar-brand {
+        font-size: 1.15rem;
+        letter-spacing: 1px;
+    }
 }
 
 #mainNav .navbar-brand:hover {
