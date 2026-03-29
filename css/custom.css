@@ -425,6 +425,17 @@ p.lead {
     color: var(--text-secondary);
 }
 
+@media (max-width: 991.98px) {
+    .footer {
+        padding-top: 2.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+    .custom-bio-text {
+        font-size: 0.85rem !important;
+        opacity: 0.8;
+    }
+}
+
 .footer h4 {
     color: var(--text-primary);
     font-size: 1.25rem;
@@ -506,6 +517,10 @@ p.lead {
     border: 2px solid var(--bg-main);
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 240, 255, 0.5);
+/* Mobile Animation Optimization */
+@media (max-width: 768px) {
+    [data-aos] {
+        transition-duration: 600ms !important;
+        transition-delay: 0ms !important;
+    }
 }
