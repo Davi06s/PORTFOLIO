@@ -14,3 +14,7 @@
 ### May 11, 2026 - CDN & External Script Pruning
 - **Finding:** Unused external scripts (e.g. Font Awesome when Bootstrap Icons is heavily used) increase attack surface (XSS via compromised CDN) and page load times.
 - **Action:** Pruned redundant `use.fontawesome.com` script and migrated residual classes to local/pre-existing Bootstrap Icons CDN equivalents. Minimizing external dependencies reduces third-party risk.
+
+### May 11, 2026 - PII Obfuscation
+- **Finding:** Personal phone number exposed in plain text in `index.html`. This exposes the owner to potential scraping and spam.
+- **Action:** Replaced the plain text phone number and `tel:` link with an obfuscated version linking to the contact form (`#contact`), adding a security comment. PII should never be exposed in plain text.
