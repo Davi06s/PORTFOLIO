@@ -524,3 +524,14 @@ p.lead {
         transition-delay: 0ms !important;
     }
 }
+/* Certificate Cards */
+.certificate-card {
+    border-radius: var(--border-radius-md);
+    background-color: var(--bg-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: scale(1.05);
+}
