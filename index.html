@@ -25,7 +25,8 @@
     <!-- Custom futuristic redesign CSS -->
     <link href="css/custom.css" rel="stylesheet" />
     <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Sentinel Security: Subresource Integrity (SRI) to prevent execution of malicious code if the CDN is compromised -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous" rel="stylesheet" />
     
     <!-- Critical Style for Navbar visibility on Mobile -->
     <style>
@@ -123,7 +124,7 @@
                             <div class="portfolio-item-caption-content text-center text-white"><i
                                     class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/trello.png" alt="Trello screenshot" />
+                        <img class="img-fluid bg-white-context" src="assets/img/portfolio/trello.png" alt="Trello screenshot" />
                     </div>
                 </div>
                 <!-- Portfolio Item 3-->
@@ -134,7 +135,7 @@
                             <div class="portfolio-item-caption-content text-center text-white"><i
                                     class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/slack.png" alt="..." />
+                        <img class="img-fluid bg-white-context" src="assets/img/portfolio/slack.png" alt="..." />
                     </div>
                 </div>
                 <!-- Portfolio Item 4-->
@@ -657,7 +658,7 @@
                                 <!-- Grid -->
                                 <div class="row justify-content-center pt-3 g-4">
                                     <div class="col-12 col-md-6 mb-4">
-                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center certificate-card">
                                             <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
                                             <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Informatica</h4>
                                             <a href="assets/certificati/attestato_informatica_forma-temp.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
@@ -666,7 +667,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 mb-4">
-                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center certificate-card">
                                             <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
                                             <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Intelligenza Artificiale</h4>
                                             <a href="assets/certificati/attestato_intelligenza-artificiale_forma-temp.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
@@ -701,7 +702,7 @@
                                 <!-- Grid -->
                                 <div class="row justify-content-center pt-3 g-4">
                                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center certificate-card">
                                             <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
                                             <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Claude Code In Action</h4>
                                             <a href="assets/certificati/certificato_claude-code-in-action.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
@@ -710,7 +711,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center certificate-card">
                                             <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
                                             <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Claude 101</h4>
                                             <a href="assets/certificati/certificato_Claude-101.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
@@ -719,7 +720,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center certificate-card">
                                             <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
                                             <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Claude Cowork</h4>
                                             <a href="assets/certificati/certificato_Claude-Cowork.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
@@ -728,7 +729,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center certificate-card">
                                             <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
                                             <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">AI Fluency Framework Foundations</h4>
                                             <a href="assets/certificati/certificato_ai-fluency_framework-foundations.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
@@ -737,7 +738,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center certificate-card">
                                             <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
                                             <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">AI Fluency for Students</h4>
                                             <a href="assets/certificati/certificato_ai-fluency-for-students.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
@@ -746,7 +747,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center certificate-card">
                                             <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
                                             <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">AI Fluency for Nonprofits</h4>
                                             <a href="assets/certificati/certificato_ai-fluency-for-nonprofits.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
@@ -755,7 +756,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center certificate-card">
                                             <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
                                             <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">AI Capabilities and Limitations</h4>
                                             <a href="assets/certificati/certificato_AI Capabilities and Limitations.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
@@ -764,7 +765,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center certificate-card">
                                             <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
                                             <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Claude Code 101</h4>
                                             <a href="assets/certificati/certificato_Claude-Code-101.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
@@ -773,7 +774,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center" style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                                        <div class="shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center certificate-card">
                                             <i class="bi bi-file-earmark-pdf" style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
                                             <h4 class="mb-3" style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">Introduction to Agent Skills</h4>
                                             <a href="assets/certificati/certificato_introduction-to-agent-skills.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mt-auto w-100" style="border-radius: 30px;">
@@ -796,7 +797,8 @@
     <script src="js/scripts.js"></script>
 
     <!-- AOS Animation JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- [SECURITY] Added SRI hash and crossorigin attribute to prevent CDN tampering -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" integrity="sha384-wziAfh6b/qT+3LrqebF9WeK4+J5sehS6FA10J1t3a866kJ/fvU5UwofWnQyzLtwu" crossorigin="anonymous"></script>
     <script>
         // Initialize AOS animations
         AOS.init({
