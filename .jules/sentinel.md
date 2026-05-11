@@ -15,7 +15,6 @@
 - **Finding:** Unused external scripts (e.g. Font Awesome when Bootstrap Icons is heavily used) increase attack surface (XSS via compromised CDN) and page load times.
 - **Action:** Pruned redundant `use.fontawesome.com` script and migrated residual classes to local/pre-existing Bootstrap Icons CDN equivalents. Minimizing external dependencies reduces third-party risk.
 
-### May 11, 2026 - Subresource Preconnect Optimization
-- **Finding:** Google Fonts requests were initiated sequentially after CSS parsing, delaying render.
-- **Action:** Added `<link rel="preconnect">` hints for `fonts.googleapis.com` and `fonts.gstatic.com` (with `crossorigin`) to `index.html`. This accelerates SSL/TLS handshake and DNS resolution for external subresources.
-- **Security Reasoning:** Preconnecting to trusted third-party origins (like Google Fonts) is a standard optimization. We strictly specify `crossorigin` where appropriate to respect CORS policies. This is primarily a performance optimization rather than a security fix, but ensuring efficient network utilization is part of robust architecture.
+### May 11, 2026 - PII Obfuscation
+- **Finding:** Personal phone number exposed in plain text in `index.html`. This exposes the owner to potential scraping and spam.
+- **Action:** Replaced the plain text phone number and `tel:` link with an obfuscated version linking to the contact form (`#contact`), adding a security comment. PII should never be exposed in plain text.
