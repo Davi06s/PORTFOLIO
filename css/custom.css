@@ -524,3 +524,11 @@ p.lead {
         transition-delay: 0ms !important;
     }
 }
+/* Cert Card Hover Effect */
+.cert-card {
+    /* transition is already defined inline but could be moved here */
+}
+
+.cert-card:hover {
+    transform: scale(1.05);
+}
