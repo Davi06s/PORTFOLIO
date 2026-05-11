@@ -1,4 +1,4 @@
-## Sentinel Journal - 2026-05-07
+# Sentinel Journal
 
 ### Code Health: MSO Cleanup
 - **Activity**: Removed legacy Microsoft Office conditional comments and namespaces from .
