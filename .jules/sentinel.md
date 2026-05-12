@@ -14,3 +14,7 @@
 ### May 11, 2026 - CDN & External Script Pruning
 - **Finding:** Unused external scripts (e.g. Font Awesome when Bootstrap Icons is heavily used) increase attack surface (XSS via compromised CDN) and page load times.
 - **Action:** Pruned redundant `use.fontawesome.com` script and migrated residual classes to local/pre-existing Bootstrap Icons CDN equivalents. Minimizing external dependencies reduces third-party risk.
+
+### May 12, 2026 - Subresource Integrity (SRI) for External Dependencies
+- **Finding:** External scripts and stylesheets loaded from CDNs (e.g. Bootstrap) lacked Subresource Integrity (SRI) hashes, creating a supply-chain vulnerability if the CDN was compromised.
+- **Action:** Added SRI hashes and crossorigin="anonymous" attributes to Bootstrap and Google Fonts dependencies in `index.html`. Note that the originally reported vulnerable script (Font Awesome) had already been removed in a prior commit.
