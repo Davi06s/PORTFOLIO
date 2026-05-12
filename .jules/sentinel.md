@@ -15,6 +15,6 @@
 - **Finding:** Unused external scripts (e.g. Font Awesome when Bootstrap Icons is heavily used) increase attack surface (XSS via compromised CDN) and page load times.
 - **Action:** Pruned redundant `use.fontawesome.com` script and migrated residual classes to local/pre-existing Bootstrap Icons CDN equivalents. Minimizing external dependencies reduces third-party risk.
 
-### May 11, 2026 - PII Obfuscation
-- **Finding:** Personal phone number exposed in plain text in `index.html`. This exposes the owner to potential scraping and spam.
-- **Action:** Replaced the plain text phone number and `tel:` link with an obfuscated version linking to the contact form (`#contact`), adding a security comment. PII should never be exposed in plain text.
+### May 12, 2026 - Subresource Integrity (SRI) for External Dependencies
+- **Finding:** External scripts and stylesheets loaded from CDNs (e.g. Bootstrap) lacked Subresource Integrity (SRI) hashes, creating a supply-chain vulnerability if the CDN was compromised.
+- **Action:** Added SRI hashes and crossorigin="anonymous" attributes to Bootstrap and Google Fonts dependencies in `index.html`. Note that the originally reported vulnerable script (Font Awesome) had already been removed in a prior commit.
