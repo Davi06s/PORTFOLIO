@@ -1,28 +1,40 @@
-# Il mio Portfolio Web 🚀
+# Portfolio Web - Davide Schino
 
-Benvenuto nel repository del mio portfolio personale! Questo progetto rappresenta il mio viaggio nel mondo dello sviluppo Front-End e mostra le mie competenze pratiche con le tecnologie web principali.
+Portfolio personale sviluppato per presentare profilo, competenze, progetti, certificati e canali di contatto.
 
-## 🎯 Obiettivo del Progetto
-L'obiettivo di questo sito è presentare me stesso, le mie competenze e i progetti a cui ho lavorato (o sto lavorando) durante il mio percorso formativo presso l'**ITS Tech Talent Factory**. È stato progettato con un'attenzione particolare al design pulito e all'esperienza utente (UX).
+## Obiettivo
 
-## 🛠️ Tecnologie Utilizzate
-Questo progetto è stato sviluppato interamente da zero (senza l'uso di template pre-fatti) utilizzando:
-- **HTML5** per la struttura semantica delle pagine.
-- **CSS3** per lo styling, il layout (Flexbox/Grid) e le animazioni.
+Il sito raccoglie i lavori realizzati durante il percorso formativo presso ITS Tech Talent Factory e durante lo studio autonomo dello sviluppo web. L'obiettivo è comunicare in modo chiaro competenze tecniche, stile progettuale e disponibilità al contatto.
 
-## ✨ Funzionalità Principali
-- **Design Fully Responsive:** Il sito si adatta perfettamente a qualsiasi dispositivo (desktop, tablet e smartphone).
-- **Interfaccia Moderna:** Utilizzo di stili CSS personalizzati per garantire una navigazione fluida e visivamente accattivante.
-- **Sezioni Chiare:** Suddivisione dei contenuti in sezioni ben definite (Chi sono, Competenze, Progetti, Contatti).
+## Tecnologie utilizzate
 
-## 🌐 Link al Progetto (Live)
-Puoi visualizzare il sito funzionante cliccando sul link qui sotto:
-👉 https://davi06s.github.io/PORTFOLIO/
+- **HTML5** per la struttura dei contenuti.
+- **CSS3** per layout, responsive design e personalizzazioni visuali.
+- **Bootstrap 5** come base UI e griglia responsive.
+- **Start Bootstrap Freelancer** come tema di partenza, poi personalizzato.
+- **Bootstrap Icons**, **Font Awesome** e **AOS** per icone e animazioni.
 
-## 👨‍💻 Autore
-Davide Schino
-- Studente Full Stack Developer presso ITS Tech Talent Factory.
-- LinkedIn: www.linkedin.com/in/davide-schino-349b4b2b1
+## Funzionalità principali
 
----
-*Grazie per aver visitato il mio progetto! Qualsiasi feedback o suggerimento è sempre ben accetto.*
+- Layout responsive per desktop, tablet e smartphone.
+- Sezione portfolio con modali di dettaglio.
+- Sezione certificati con link ai PDF.
+- Form di contatto collegato a Formspree.
+- Navigazione fixed con supporto mobile.
+
+## Miglioramenti consigliati
+
+- Ottimizzare gli asset più pesanti, in particolare GIF e PNG grandi.
+- Ridurre progressivamente gli stili inline spostandoli in classi CSS dedicate.
+- Valutare un piccolo workflow di build se il progetto cresce.
+
+## Link live
+
+https://davi06s.github.io/PORTFOLIO/
+
+## Autore
+
+Davide Schino  
+Studente Full Stack Developer presso ITS Tech Talent Factory.
+
+LinkedIn: https://www.linkedin.com/in/davide-schino-349b4b2b1

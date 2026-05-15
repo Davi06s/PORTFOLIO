@@ -7,6 +7,7 @@
     /* Deep, professional dark theme colors */
     --bg-main: #0a0e17;
     /* Very dark blue/gray */
+    --bg-primary: var(--bg-main);
     --bg-elevated: #111825;
     /* Slightly lighter for cards/sections */
     --bg-glass: rgba(17, 24, 37, 0.75);
@@ -31,7 +32,9 @@
     --transition-fast: all 0.2s ease;
     --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --border-radius-lg: 16px;
+    --border-radius-md: 12px;
     --border-radius-sm: 8px;
+    --border-radius-pill: 999px;
 }
 
 /* Global Styles */
@@ -305,6 +308,13 @@ p.lead {
     border-color: rgba(0, 240, 255, 0.3);
 }
 
+.portfolio .portfolio-item:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible {
+    outline: 3px solid rgba(0, 240, 255, 0.8);
+    outline-offset: 4px;
+}
+
 .portfolio .portfolio-item .portfolio-item-caption {
     background: rgba(10, 14, 23, 0.85) !important;
     backdrop-filter: blur(4px);
@@ -532,4 +542,15 @@ p.lead {
 
 .cert-card:hover {
     transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
 }

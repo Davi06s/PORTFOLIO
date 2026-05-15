@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">DS favicon</title>
+  <defs>
+    <linearGradient id="neon" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00f0ff"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#070b12"/>
+  <rect x="7" y="7" width="50" height="50" rx="11" fill="none" stroke="url(#neon)" stroke-width="2.5"/>
+  <text x="32" y="42"
+        text-anchor="middle"
+        font-family="Arial Black, Montserrat, sans-serif"
+        font-size="29"
+        font-weight="900"
+        letter-spacing="-2"
+        fill="url(#neon)">DS</text>
+</svg>
