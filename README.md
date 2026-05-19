@@ -1,4 +1,4 @@
-# Portfolio Web - Davide Schino (Premium 3D Experience)
+# Portfolio Web - Davide Schino
 
 Portfolio personale sviluppato per presentare profilo, competenze, progetti, certificati e canali di contatto. Il sito è stato recentemente evoluto in un'esperienza visiva premium e cinematografica con animazioni 3D e scroll storytelling.
 
