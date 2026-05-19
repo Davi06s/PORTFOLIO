@@ -1,46 +1,67 @@
-# Portfolio Web - Davide Schino
+# 🚀 Portfolio Web — Davide Schino
 
-Portfolio personale sviluppato per presentare profilo, competenze, progetti, certificati e canali di contatto. Il sito è stato recentemente evoluto in un'esperienza visiva premium e cinematografica con animazioni 3D e scroll storytelling.
+[![Live Demo](https://img.shields.io/badge/Demo-Live_Project-brightgreen?style=for-the-badge&logo=github)](https://davi06s.github.io/PORTFOLIO/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Davide_Schino-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/davide-schino-349b4b2b1)
 
-## Obiettivo
+Benvenuto nel mio portfolio personale! Uno spazio digitale progettato per presentare il mio profilo, le mie competenze, i progetti realizzati, le certificazioni e i miei canali di contatto. Il sito è stato recentemente evoluto in un'**esperienza visiva premium e cinematografica** con animazioni 3D e storytelling interattivo basato sullo scroll.
 
-Il sito raccoglie i lavori realizzati durante il percorso formativo presso ITS Tech Talent Factory e durante lo studio autonomo dello sviluppo web. L'obiettivo è comunicare in modo chiaro ed d'impatto le competenze tecniche, lo stile progettuale e la disponibilità al contatto, offrendo un'esperienza utente immersiva e moderna.
+---
 
-## Tecnologie e Librerie Utilizzate
+## 🎯 Obiettivo
 
-- **HTML5** per la struttura semantica dei contenuti.
-- **CSS3 (Custom & Premium)** per layout, responsive design, overlay testurizzati, glow divider ed effetti neon.
-- **Bootstrap 5** come base UI e griglia responsive.
-- **GSAP (GreenSock)** per la gestione di animazioni ad alte performance.
-- **GSAP ScrollTrigger & ScrollTo** per rivelazioni ed effetti controllati dallo scroll della pagina.
-- **Canvas API (WebGL/2D)** per il sistema interattivo di particelle 3D nell'hero section.
-- **Bootstrap Icons** per la veste grafica e la parte iconografica.
+Il sito raccoglie i lavori realizzati durante il percorso formativo presso **ITS Tech Talent Factory** e durante lo studio autonomo dello sviluppo web. L'obiettivo è comunicare in modo chiaro e d'impatto le competenze tecniche, lo stile progettuale e la disponibilità al contatto, offrendo un'esperienza utente immersiva, moderna e altamente interattiva.
 
-## Funzionalità Principali (Premium Experience)
+---
 
-- **3D Particle Constellation**: Un background particellare 3D animato e interattivo nell'Hero Section che risponde al movimento del mouse (repulsione e collegamento dinamico).
-- **GSAP Scroll Storytelling**: Effetti di rivelazione (fade-up, slide-left, slide-right, scale-in) sincronizzati con lo scorrimento della pagina.
-- **Parallax Masthead**: Effetto di profondità sull'hero section allo scroll del mouse.
-- **Interactive Cursor Glow**: Un effetto di luce radiale soffusa (spotlight) che segue il cursore (disabilitato su mobile per ottimizzare la batteria e le performance).
-- **3D Card Tilt**: Le schede del portfolio ruotano e reagiscono in modo tridimensionale al movimento del cursore.
-- **Animated Stats Counters**: Contatori numerici animati nella sezione *About* per mostrare in tempo reale statistiche su Progetti, Certificati e Tecnologie.
-- **Timeline Interattiva "Il mio percorso"**: Una sezione timeline verticale animata per raccontare le tappe principali della mia formazione e dei progetti completati.
-- **Scroll Progress Bar**: Indicatore di scorrimento gradiente neon situato in cima alla viewport.
-- **Magnetic Buttons & Navigation Auto-hide**: Pulsanti magnetici che attirano il puntatore e barra di navigazione che si nasconde intelligentemente allo scroll.
+## 🛠️ Tecnologie & Librerie Utilizzate
 
-## Ottimizzazioni per Accessibilità e Performance
+Un mix di strumenti moderni per garantire performance elevate, animazioni fluide e una struttura solida:
 
-- Disattivazione automatica delle animazioni complesse per utenti con preferenza di movimento ridotto (`prefers-reduced-motion`).
-- Ottimizzazione del numero delle particelle e disabilitazione degli effetti hover pesanti sui dispositivi mobili (sotto i 768px).
-- Lazy loading delle immagini del portfolio e dei loghi per garantire carichi veloci.
+*   **🧱 HTML5**: Struttura semantica e accessibile dei contenuti.
+*   **🎨 CSS3 (Custom & Premium)**: Layout personalizzati, responsive design, overlay testurizzati, glow divider ed effetti neon.
+*   **⚡ Bootstrap 5**: Griglia responsive e componenti UI di base.
+*   **✨ GSAP (GreenSock)**: Motore di animazione ad altissime prestazioni per transizioni fluide.
+*   **📜 GSAP ScrollTrigger & ScrollTo**: Rivelazioni di contenuti ed effetti controllati dinamicamente dallo scorrimento della pagina.
+*   **🌌 Canvas API (WebGL/2D)**: Sistema interattivo di costellazioni di particelle 3D nell'hero section.
+*   **🎯 Bootstrap Icons**: Veste grafica e set di icone coordinato.
 
-## Link Live
+---
 
-https://davi06s.github.io/PORTFOLIO/
+## ✨ Funzionalità Principali (Premium Experience)
 
-## Autore
+| Feature | Descrizione |
+| :--- | :--- |
+| **🌌 3D Particle Constellation** | Background particellare 3D animato e interattivo nell'Hero Section che risponde al movimento del mouse (repulsione e collegamento dinamico). |
+| **📜 GSAP Scroll Storytelling** | Effetti di rivelazione (fade-up, slide-left, slide-right, scale-in) sincronizzati fluidamente con lo scorrimento della pagina. |
+| **🏔️ Parallax Masthead** | Effetto di profondità e tridimensionalità sull'hero section controllato dallo scroll del mouse. |
+| **🔦 Interactive Cursor Glow** | Un effetto di luce radiale soffusa (spotlight) che segue il cursore (disabilitato su mobile per ottimizzare batteria e prestazioni). |
+| **📐 3D Tilt Cards** | Le schede del portfolio ruotano e reagiscono in modo tridimensionale al passaggio e al movimento del mouse. |
+| **📊 Animated Stats Counters** | Contatori numerici animati nella sezione *About* per mostrare in tempo reale statistiche su Progetti, Certificati e Tecnologie. |
+| **⏳ Timeline "Il mio percorso"** | Sezione timeline verticale animata per raccontare in modo cronologico le tappe principali della formazione e dei progetti completati. |
+| **📈 Scroll Progress Bar** | Indicatore di scorrimento gradiente neon posizionato nella parte superiore della viewport. |
+| **🧲 Magnetic Buttons & Auto-hide Navbar** | Pulsanti magnetici che attirano il puntatore e barra di navigazione che si nasconde intelligentemente durante lo scroll verso il basso. |
 
-Davide Schino  
-Studente Full Stack Developer presso ITS Tech Talent Factory.
+---
 
-LinkedIn: https://www.linkedin.com/in/davide-schino-349b4b2b1
+## ⚡ Ottimizzazioni per Accessibilità & Performance
+
+*   **♿ Accessibilità Prima di Tutto**: Disattivazione automatica delle animazioni complesse per gli utenti con preferenza di movimento ridotto (`prefers-reduced-motion`).
+*   **📱 Mobile Friendly**: Ottimizzazione del numero delle particelle e disabilitazione degli effetti hover e cursor glow pesanti sui dispositivi mobili (sotto i 768px).
+*   **🚀 Fast Loading**: Lazy loading integrato delle immagini del portfolio e dei loghi per garantire un caricamento rapido delle risorse.
+
+---
+
+## 🔗 Link Live
+
+Visita il progetto live cliccando sul badge in alto o sul link diretto:
+👉 **[https://davi06s.github.io/PORTFOLIO/](https://davi06s.github.io/PORTFOLIO/)**
+
+---
+
+## 👨‍💻 Autore
+
+**Davide Schino**  
+🎓 Studente Full Stack Developer presso **ITS Tech Talent Factory**.
+
+*   **LinkedIn**: [davide-schino-349b4b2b1](https://www.linkedin.com/in/davide-schino-349b4b2b1)
+*   **GitHub**: [@Davi06s](https://github.com/Davi06s)
