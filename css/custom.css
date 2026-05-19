@@ -192,21 +192,7 @@ p.lead {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Subtle grid pattern for futuristic touch */
-.masthead::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 30px 30px;
-    pointer-events: none;
-    z-index: 0;
-}
+/* Grid pattern removed — replaced by interactive 3D particle canvas */
 
 .masthead .container {
     position: relative;

@@ -1,4 +1,4 @@
-<!-- Last Update: 2026-03-29 13:14 -->
+﻿<!-- Last Update: 2026-05-19 -->
 <!DOCTYPE html>
 <html lang="it">
 
@@ -24,15 +24,14 @@
     <link href="css/styles.css" rel="stylesheet" />
     <!-- Custom futuristic redesign CSS -->
     <link href="css/custom.css" rel="stylesheet" />
-    <!-- AOS Animation CSS -->
-    <!-- Sentinel Security: Subresource Integrity (SRI) to prevent execution of malicious code if the CDN is compromised -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous" rel="stylesheet" />
-    
+    <!-- Premium Visual Experience CSS -->
+    <link href="css/premium.css" rel="stylesheet" />
+
     <!-- Critical Style for Navbar visibility on Mobile -->
     <style>
         #mainNav {
             background-color: #111825 !important;
-            transition: opacity 0.3s ease-in-out;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
             width: 100% !important;
             left: 0 !important;
             right: 0 !important;
@@ -48,6 +47,12 @@
 </head>
 
 <body id="page-top">
+    <!-- Premium: Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <!-- Premium: Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <!-- Premium: Noise Overlay -->
+    <div class="noise-overlay"></div>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
@@ -60,38 +65,48 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#about">About</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#certificati">Certificati</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#contact">Contact</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#journey">Percorso</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#certificati">Certificati</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- Masthead-->
     <header class="masthead text-white text-center">
+        <!-- Premium: 3D Particle Canvas -->
+        <canvas id="heroCanvas"></canvas>
+        <!-- Premium: Floating Geometric Shapes -->
+        <div class="floating-shapes">
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+        </div>
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Avatar Image-->
-            <img class="masthead-avatar mb-5" src="assets/img/davide_avatar.jpg" data-aos="zoom-in"
-                data-aos-duration="1000" style="object-fit: cover; object-position: top; width: 250px; height: 250px;"
+            <img class="masthead-avatar mb-5 reveal-scale" src="assets/img/davide_avatar.jpg"
+                style="object-fit: cover; object-position: top; width: 250px; height: 250px;"
                 alt="Davide Schino" />
             <!-- Masthead Heading-->
-            <h1 class="masthead-heading text-uppercase mb-0" data-aos="fade-up" data-aos-delay="200">Davide Schino</h1>
+            <h1 class="masthead-heading text-uppercase mb-0 text-gradient-animated reveal-up">Davide Schino</h1>
             <!-- Icon Divider-->
-            <div class="divider-custom divider-light" data-aos="zoom-in" data-aos-delay="300">
+            <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="bi bi-cpu"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-            <!-- Masthead Subheading-->
-            <p class="masthead-subheading font-weight-light mb-0" data-aos="fade-up" data-aos-delay="400">Full Stack
-                Developer</p>
+            <!-- Masthead Subheading - Typed Effect -->
+            <p class="masthead-subheading font-weight-light mb-0 reveal-up">
+                <span id="typedSubtitle"></span><span class="typed-cursor"></span>
+            </p>
         </div>
     </header>
+    <!-- Premium: Glow Divider -->
+    <div class="section-glow-divider"></div>
     <!-- Portfolio Section-->
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
@@ -106,8 +121,8 @@
             <!-- Portfolio Grid Items-->
             <div class="row justify-content-center">
                 <!-- Portfolio Item 1 (R-Type game) -->
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1"
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto tilt-card" data-bs-toggle="modal" data-bs-target="#portfolioModal1"
                         role="button" tabindex="0" aria-label="Apri dettagli progetto R-Type Clone">
                         <div
                             class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -117,8 +132,8 @@
                     </div>
                 </div>
                 <!-- Portfolio Item 2-->
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2"
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto tilt-card" data-bs-toggle="modal" data-bs-target="#portfolioModal2"
                         role="button" tabindex="0" aria-label="Apri dettagli progetto Trello Clone">
                         <div
                             class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -128,8 +143,8 @@
                     </div>
                 </div>
                 <!-- Portfolio Item 3-->
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3"
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto tilt-card" data-bs-toggle="modal" data-bs-target="#portfolioModal3"
                         role="button" tabindex="0" aria-label="Apri dettagli progetto Slack Clone">
                         <div
                             class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -139,7 +154,7 @@
                     </div>
                 </div>
                 <!-- Portfolio Item 4-->
-                <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-md-6 col-lg-4 mb-5">
                     <div class="portfolio-item mx-auto shadow-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal4"
                         role="button" tabindex="0" aria-label="Apri dettagli progetto Restyling Sito Web"
                         style="border-radius: var(--border-radius-md); overflow: hidden; background-color: #fff;">
@@ -149,7 +164,7 @@
             </div>
 
             <!-- Portfolio Additional Text -->
-            <div class="row mt-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="row mt-4 reveal-up">
                 <div class="col-lg-8 mx-auto text-center">
                     <p class="lead mb-4">
                         Oltre a questi progetti principali, mi piace sperimentare continuamente con nuove tecnologie,
@@ -178,12 +193,12 @@
             </div>
             <!-- About Section Content-->
             <div class="row align-items-center mb-5">
-                <div class="col-lg-5 ms-auto text-center text-lg-end mb-4 mb-lg-0" data-aos="fade-right">
+                <div class="col-lg-5 ms-auto text-center text-lg-end mb-4 mb-lg-0 reveal-left">
                     <img loading="lazy" src="assets/img/about_image.jpg" alt="Davide Schino" class="img-fluid about-image shadow-lg"
                         style="max-height: 500px; width: 100%; object-fit: cover; border: 2px solid var(--accent-primary); border-radius: var(--border-radius-lg);">
                 </div>
-                <div class="col-lg-6 me-auto"
-                    style="border-left: 2px solid rgba(255, 255, 255, 0.1); padding-left: 2rem;" data-aos="fade-left">
+                <div class="col-lg-6 me-auto reveal-right"
+                    style="border-left: 2px solid rgba(255, 255, 255, 0.1); padding-left: 2rem;">
                     <h3 class="mb-3" style="color: var(--accent-primary); font-family: var(--font-heading);">Chi sono
                     </h3>
                     <p class="lead mb-4">
@@ -198,7 +213,7 @@
                         contempo mi dedico con passione allo studio e alla sperimentazione continua di nuove tecnologie.
                     </p>
                     <!-- Skills Tags/Badges -->
-                    <div class="d-flex flex-wrap gap-2 mb-0 mt-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="d-flex flex-wrap gap-2 mb-0 mt-2">
                         <span class="badge"
                             style="background: rgba(0, 240, 255, 0.1); color: var(--accent-primary); border: 1px solid var(--accent-primary); padding: 0.6rem 1rem; border-radius: 30px; font-family: var(--font-heading); font-size: 0.85rem;"><i class="bi bi-filetype-html me-1"></i> HTML/CSS</span>
                         <span class="badge"
@@ -216,13 +231,100 @@
             </div>
             <!-- About Section Button-->
             <div class="text-center mt-4">
-                <a class="btn btn-xl btn-outline-light" href="assets/CV_TTF_Schino.pdf" target="_blank" rel="noopener noreferrer">
+                <a class="btn btn-xl btn-outline-light magnetic-btn" href="assets/CV_TTF_Schino.pdf" target="_blank" rel="noopener noreferrer">
                     <i class="bi bi-file-earmark-pdf me-2"></i>
                     Scarica il mio Curriculum
                 </a>
             </div>
+            <!-- Premium: Stats Counters -->
+            <div class="stats-row reveal-up">
+                <div class="stat-item">
+                    <div class="counter-number" data-target="4">0</div>
+                    <div class="counter-label">Progetti</div>
+                </div>
+                <div class="stat-item">
+                    <div class="counter-number" data-target="11">0</div>
+                    <div class="counter-label">Certificati</div>
+                </div>
+                <div class="stat-item">
+                    <div class="counter-number" data-target="6">0</div>
+                    <div class="counter-label">Tecnologie</div>
+                </div>
+            </div>
         </div>
     </section>
+    <!-- Premium: Glow Divider -->
+    <div class="section-glow-divider"></div>
+    <!-- Journey / Timeline Section (Storytelling) -->
+    <section class="page-section" id="journey">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Il Mio Percorso</h2>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="bi bi-rocket-takeoff"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="bi bi-lightbulb"></i></div>
+                        <span class="timeline-date">2023</span>
+                        <h4 class="timeline-title">La Scintilla</h4>
+                        <p class="timeline-desc">Scopro la passione per la programmazione e il web development. Inizio a studiare HTML, CSS e JavaScript in modo autodidatta.</p>
+                    </div>
+                    <div class="timeline-spacer"></div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="bi bi-mortarboard"></i></div>
+                        <span class="timeline-date">2024</span>
+                        <h4 class="timeline-title">ITS Tech Talent Factory</h4>
+                        <p class="timeline-desc">Entro nell'ITS Tech Talent Factory per acquisire competenze avanzate in architetture software, React, Node.js e database.</p>
+                    </div>
+                    <div class="timeline-spacer"></div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="bi bi-code-slash"></i></div>
+                        <span class="timeline-date">2024 - 2025</span>
+                        <h4 class="timeline-title">Primi Progetti Complessi</h4>
+                        <p class="timeline-desc">Sviluppo progetti full-stack come il clone di Trello e Slack, applicando architetture REST, WebSocket e metodologie agili.</p>
+                    </div>
+                    <div class="timeline-spacer"></div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="bi bi-award"></i></div>
+                        <span class="timeline-date">2025</span>
+                        <h4 class="timeline-title">Certificazioni & AI</h4>
+                        <p class="timeline-desc">Ottengo 11 certificazioni professionali e mi specializzo nell'integrazione dell'Intelligenza Artificiale nei flussi di sviluppo.</p>
+                    </div>
+                    <div class="timeline-spacer"></div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <!-- Timeline Item 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="bi bi-rocket-takeoff"></i></div>
+                        <span class="timeline-date">2026</span>
+                        <h4 class="timeline-title">Il Futuro</h4>
+                        <p class="timeline-desc">Pronto per nuove sfide professionali. Cerco opportunità per contribuire a progetti innovativi e continuare a crescere come developer.</p>
+                    </div>
+                    <div class="timeline-spacer"></div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Premium: Glow Divider -->
+    <div class="section-glow-divider"></div>
     <!-- Certificati Section-->
     <section class="page-section portfolio" id="certificati">
         <div class="container">
@@ -237,7 +339,7 @@
             <!-- Grid Items-->
             <div class="row justify-content-center pt-3">
                 <!-- Ente Forma-Temp -->
-                <div class="col-md-6 mb-5" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-6 mb-5">
                     <div class="portfolio-item mx-auto shadow-sm p-4 text-center" data-bs-toggle="modal"
                         data-bs-target="#certificatiModalFormaTemp" role="button" tabindex="0"
                         aria-label="Apri certificati Forma-Temp"
@@ -251,7 +353,7 @@
                     </div>
                 </div>
                 <!-- Ente Anthropic -->
-                <div class="col-md-6 mb-5" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-6 mb-5">
                     <div class="portfolio-item mx-auto shadow-sm p-4 text-center" data-bs-toggle="modal"
                         data-bs-target="#certificatiModalAnthropic" role="button" tabindex="0"
                         aria-label="Apri certificati Anthropic"
@@ -281,7 +383,7 @@
             <!-- Contact Section Content-->
             <div class="row">
                 <!-- Contact Info Column -->
-                <div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-right">
+                <div class="col-lg-4 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4"
                         style="color: var(--accent-primary); font-family: var(--font-heading);">Get In Touch</h4>
                     <p class="lead mb-4">
@@ -336,7 +438,7 @@
                 </div>
 
                 <!-- Contact Form Column -->
-                <div class="col-lg-8" data-aos="fade-left">
+                <div class="col-lg-8">
                     <!-- Form Container -->
                     <div class="p-4 p-md-5"
                         style="background: var(--bg-elevated); border-radius: var(--border-radius-lg); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
@@ -378,7 +480,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <!-- Brand / Short Bio -->
-                <div class="col-lg-3 mb-3 mb-lg-0 text-lg-start" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-3 mb-3 mb-lg-0 text-lg-start">
                     <h4 class="text-uppercase mb-2 text-nowrap"
                         style="font-family: var(--font-heading); color: var(--text-primary); letter-spacing: 2px; font-size: 1.25rem;">
                         Davide Schino</h4>
@@ -388,7 +490,7 @@
                     </p>
                 </div>
                 <!-- Quick Links -->
-                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 gap-md-4">
                         <!-- Portfolio -->
                         <a href="#portfolio" class="text-decoration-none fw-bold"
@@ -420,7 +522,7 @@
                 </div>
                 <!-- Social Icons -->
                 <div class="col-lg-3 text-lg-end d-flex justify-content-center justify-content-lg-end gap-3 mt-3 mt-lg-0"
-                    data-aos="fade-up" data-aos-delay="300">
+                   >
                     <a class="btn btn-outline-light btn-social mx-0" href="https://github.com/Davi06s" target="_blank" rel="noopener noreferrer"
                         aria-label="GitHub" style="width: 3.8rem; height: 3.8rem; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 1.5rem;"><i class="bi bi-github"></i></a>
                     <a class="btn btn-outline-light btn-social mx-0"
@@ -802,19 +904,17 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 
-    <!-- AOS Animation JS -->
-    <!-- [SECURITY] Added SRI hash and crossorigin attribute to prevent CDN tampering -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" integrity="sha384-wziAfh6b/qT+3LrqebF9WeK4+J5sehS6FA10J1t3a866kJ/fvU5UwofWnQyzLtwu" crossorigin="anonymous"></script>
-    <script>
-        // Initialize AOS animations only when the CDN has loaded correctly.
-        if (window.AOS) {
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 50
-            });
-        }
+    <!-- GSAP + ScrollTrigger + ScrollTo (Premium Animation Engine) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" crossorigin="anonymous"></script>
 
+    <!-- Premium: 3D Particle Canvas Engine -->
+    <script src="js/particles.js"></script>
+    <!-- Premium: All Effects (ScrollTrigger, Typed, Cursor, Tilt, Parallax) -->
+    <script src="js/premium.js"></script>
+
+    <script>
         // Back to Top Button Logic
         const backToTopBtn = document.getElementById("backToTop");
         if (backToTopBtn) {
@@ -827,16 +927,12 @@
                     backToTopBtn.style.visibility = "hidden";
                 }
             });
-
-            // Smooth scroll for Back to Top
             backToTopBtn.addEventListener("click", (e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
     </script>
-
-    <!-- Modulo di contatto script rimosso (ora usa Formspree o server custom) -->
 </body>
 
 </html>
