@@ -5,27 +5,27 @@
 /* Variables */
 :root {
     /* Deep, professional dark theme colors */
-    --bg-main: #0a0e17;
-    /* Very dark blue/gray */
+    --bg-main: #0C0C0C;
+    /* Very dark gray */
     --bg-primary: var(--bg-main);
-    --bg-elevated: #111825;
+    --bg-elevated: #161616;
     /* Slightly lighter for cards/sections */
-    --bg-glass: rgba(17, 24, 37, 0.75);
+    --bg-glass: rgba(22, 22, 22, 0.75);
     --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
+    --text-secondary: #BBCCD7;
     --text-inverse: #ffffff;
     /* Testo bianco forzato (es. bottoni/header) */
 
     /* Elegant but futuristic accents */
-    --accent-primary: #00f0ff;
-    /* Neon cyan */
-    --accent-secondary: #8b5cf6;
-    /* Sleek purple */
-    --accent-glow: 0 0 15px rgba(0, 240, 255, 0.4);
+    --accent-primary: #BBCCD7;
+    /* Silver-Blue Accent */
+    --accent-secondary: #646973;
+    /* Gray Accent */
+    --accent-glow: 0 0 15px rgba(187, 204, 215, 0.4);
 
     /* Typography */
-    --font-heading: 'Orbitron', sans-serif;
-    /* Futuristic */
+    --font-heading: 'Kanit', sans-serif;
+    /* Premium font from prompt */
     --font-body: 'Montserrat', sans-serif;
     /* Professional, clean */
 
