@@ -45,8 +45,9 @@
             }, { passive: true });
 
             function updateGlow() {
-                glow.style.left = mx + 'px';
-                glow.style.top = my + 'px';
+                // Security/Performance note: using transform: translate to force hardware acceleration
+                // and avoid layout thrashing caused by animating top/left properties.
+                glow.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
                 requestAnimationFrame(updateGlow);
             }
             updateGlow();
