@@ -325,8 +325,14 @@
     // ────────────────────────────────────────────────────────────────────────
     if (!isMobile && !prefersReduced) {
         document.querySelectorAll('.tilt-card').forEach(card => {
+            let rect;
+            card.addEventListener('mouseenter', () => {
+                rect = card.getBoundingClientRect(); // Cache rect on enter
+                card.style.transition = 'none';
+            });
+
             card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
+                if (!rect) rect = card.getBoundingClientRect(); // Fallback if missing
                 const x = (e.clientX - rect.left) / rect.width;
                 const y = (e.clientY - rect.top) / rect.height;
                 const rotateX = (0.5 - y) * 12;
@@ -338,10 +344,6 @@
                 card.style.transform = 'perspective(600px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
                 card.style.transition = 'transform 0.5s ease';
                 setTimeout(() => { card.style.transition = ''; }, 500);
-            });
-
-            card.addEventListener('mouseenter', () => {
-                card.style.transition = 'none';
             });
         });
     }
