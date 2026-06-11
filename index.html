@@ -1,4 +1,4 @@
-<!-- Last Update: 2026-05-19 -->
+<!-- Last Update: 2026-06-11 -->
 <!DOCTYPE html>
 <html lang="it">
 
@@ -81,7 +81,7 @@
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
                             href="#about">About</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#competenze">Competenze</a></li>
+                            href="#services">Competenze</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
                             href="#journey">Percorso</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
@@ -300,6 +300,44 @@
                     </div>
                 </div>
 
+                <!-- Card 05 - Movie App -->
+                <div class="project-stack-card-wrapper" data-index="4">
+                    <div class="project-stack-card" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                        <!-- Top Row -->
+                        <div class="card-top-row">
+                            <div class="card-left-info">
+                                <span class="card-num">05</span>
+                                <div class="card-meta">
+                                    <span class="card-category">FRONT-END / API</span>
+                                    <h3 class="card-title">Movie App</h3>
+                                </div>
+                            </div>
+                            <div class="card-right-actions">
+                                <a href="https://davi06s.github.io/movieapp-schino/" target="_blank"
+                                    rel="noopener noreferrer" class="btn-live-project"
+                                    onclick="event.stopPropagation();">
+                                    <span>LIVE PROJECT</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Bottom Row -->
+                        <div class="card-bottom-row">
+                            <div class="card-col-left">
+                                <img src="assets/img/portfolio/movieapp_home.png" alt="Movie App - Film in Tendenza"
+                                    class="card-img img-h-sm" style="object-fit: cover;" loading="lazy" />
+                                <img src="assets/img/portfolio/movieapp_series.png"
+                                    alt="Movie App - Serie TV Popolari" class="card-img img-h-lg" style="object-fit: cover;"
+                                    loading="lazy" />
+                            </div>
+                            <div class="card-col-right">
+                                <img src="assets/img/portfolio/movieapp_netflix.png"
+                                    alt="Netflix-Style Cinema" class="card-img img-tall" style="object-fit: cover;"
+                                    loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Portfolio Additional Text -->
@@ -392,7 +430,7 @@
             <!-- Premium: Stats Counters -->
             <div class="stats-row reveal-up">
                 <div class="stat-item">
-                    <div class="counter-number" data-target="4">0</div>
+                    <div class="counter-number" data-target="5">0</div>
                     <div class="counter-label">Progetti</div>
                 </div>
                 <div class="stat-item">
@@ -409,8 +447,8 @@
     <!-- Premium: Glow Divider -->
     <div class="section-glow-divider"></div>
 
-    <!-- Competenze Section -->
-    <section class="page-section services-section" id="competenze">
+    <!-- Services Section -->
+    <section class="page-section services-section" id="services">
         <div class="container">
             <h2 class="services-heading text-center text-uppercase text-gradient-animated"
                 style="color: #0C0C0C; font-size: clamp(2.5rem, 6vw, 5rem);">Competenze</h2>
@@ -768,11 +806,11 @@
                             onmouseout="this.style.color='var(--text-secondary)'">ABOUT</a>
                         <span style="color: rgba(255,255,255,0.2);">|</span>
 
-                        <!-- Competenze -->
-                        <a href="#competenze" class="text-decoration-none fw-bold"
+                        <!-- Servizi -->
+                        <a href="#services" class="text-decoration-none fw-bold"
                             style="color: var(--text-secondary); transition: var(--transition-fast); font-size: 0.9rem;"
                             onmouseover="this.style.color='var(--accent-primary)'"
-                            onmouseout="this.style.color='var(--text-secondary)'">COMPETENZE</a>
+                            onmouseout="this.style.color='var(--text-secondary)'">SERVIZI</a>
                         <span style="color: rgba(255,255,255,0.2);">|</span>
 
                         <!-- Certificati -->
@@ -1037,6 +1075,56 @@
                                     target="_blank" rel="noopener noreferrer">
                                     <i class="bi bi-github"></i> Visualizza il codice su GitHub
                                 </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 5 (Movie App) -->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5Label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
+                        aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                                    id="portfolioModal5Label">Movie App</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="bi bi-cpu"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img loading="lazy" class="img-fluid rounded mb-5"
+                                    src="assets/img/portfolio/movieapp_home.png" alt="Movie App screenshot" />
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-4">Una web application moderna in stile Netflix che permette di
+                                    scoprire i film e le serie TV più popolari e in tendenza del momento,
+                                    consumando le API ufficiali di The Movie Database (TMDB).
+
+                                    Sviluppata interamente con tecnologie frontend standard (HTML5, CSS3,
+                                    Vanilla JavaScript), l'app presenta una Home con i contenuti in tendenza,
+                                    sezioni dedicate a Film e Serie TV popolari, generazione dinamica delle card
+                                    e un design dark responsive ispirato a Netflix.
+                                </p>
+                                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                                    <a class="btn btn-primary" href="https://github.com/Davi06s/movieapp-schino"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <i class="bi bi-github"></i> Visualizza il codice su GitHub
+                                    </a>
+                                    <a class="btn btn-outline-light" href="https://davi06s.github.io/movieapp-schino/"
+                                        target="_blank" rel="noopener noreferrer" style="border: 1px solid var(--accent-primary) !important; color: var(--accent-primary) !important;">
+                                        <i class="bi bi-globe"></i> Visita il Sito Live
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

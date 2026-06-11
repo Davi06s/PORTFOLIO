@@ -363,6 +363,23 @@
     .reveal-up, .reveal-left, .reveal-right, .reveal-scale {
         opacity: 1 !important; transform: none !important;
     }
+
+    /* Stacking Cards Mobile Adjustments */
+    .card-top-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .card-right-actions {
+        width: 100%;
+    }
+    .btn-live-project {
+        width: 100%;
+        justify-content: center;
+    }
+    .card-left-info {
+        gap: 1rem;
+    }
 }
 @media (max-width: 576px) {
     .timeline-content { padding: 1rem 1.2rem; }

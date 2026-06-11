@@ -402,14 +402,19 @@
             "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=420&h=270&q=80",
             "assets/img/portfolio/slack.png",
             "https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&w=420&h=270&q=80",
-            "assets/img/portfolio/preview.gif",
+            "assets/img/portfolio/movieapp_home.png",
             "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=420&h=270&q=80",
+            "assets/img/portfolio/netflix_vibe_1.png",
             "assets/img/portfolio/prima.png",
             "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=420&h=270&q=80",
-            "assets/img/portfolio/dopo.png",
+            "assets/img/portfolio/movieapp_movies.png",
             "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=420&h=270&q=80",
+            "assets/img/portfolio/movieapp_series.png",
+            "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=420&h=270&q=80",
+            "assets/img/portfolio/netflix_vibe_2.png",
+            "assets/img/portfolio/preview.gif",
             "assets/img/portfolio/trello.png",
-            "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=420&h=270&q=80"
+            "assets/img/portfolio/dopo.png"
         ];
 
         const createMarqueeTrack = (row, imgList, reverse = false) => {
