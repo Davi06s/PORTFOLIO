@@ -92,7 +92,9 @@
             </div>
         </div>
     </nav>
-    <!-- Masthead-->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <!-- Masthead-->
     <header class="masthead text-white text-center">
         <!-- Premium: 3D Particle Canvas -->
         <canvas id="heroCanvas"></canvas>
@@ -109,7 +111,7 @@
             <img class="masthead-avatar mb-5 reveal-scale" src="assets/img/davide_avatar.jpg"
                 style="object-fit: cover; object-position: top; width: 250px; height: 250px;" alt="Davide Schino" />
             <!-- Masthead Heading-->
-            <h1 class="masthead-heading text-uppercase mb-0 text-gradient-animated reveal-up">Davide Schino</h1>
+            <h1 class="masthead-heading text-uppercase mb-0 text-gradient-animated">Davide Schino</h1>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
@@ -654,7 +656,7 @@
                         <h4 class="mb-3"
                             style="font-size: 1.5rem; color: var(--text-primary); font-family: var(--font-heading);">
                             Anthropic</h4>
-                        <p class="mb-4" style="color: var(--text-secondary); font-size: 1rem;">9 Certificati</p>
+                        <p class="mb-4" style="color: var(--text-secondary); font-size: 1rem;">12 Certificati</p>
                         <div class="btn btn-outline-primary mt-auto" style="border-radius: 30px;">
                             <i class="bi bi-grid-fill me-2"></i>Sfoglia Certificati
                         </div>
@@ -865,6 +867,8 @@
             </div>
         </div>
     </footer>
+        </div>
+    </div>
 
     <!-- Back to Top Button -->
     <a href="#page-top" id="backToTop"
@@ -1363,6 +1367,54 @@
                                             </a>
                                         </div>
                                     </div>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <div class="cert-card shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center"
+                                            style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;">
+                                            <i class="bi bi-file-earmark-pdf"
+                                                style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                                            <h4 class="mb-3"
+                                                style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">
+                                                Claude Platform 101</h4>
+                                            <a href="assets/certificati/certificato_Claude_Platform_101.pdf"
+                                                target="_blank" rel="noopener noreferrer"
+                                                class="btn btn-outline-primary mt-auto w-100"
+                                                style="border-radius: 30px;">
+                                                <i class="bi bi-eye me-2"></i>Visualizza
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <div class="cert-card shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center"
+                                            style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;">
+                                            <i class="bi bi-file-earmark-pdf"
+                                                style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                                            <h4 class="mb-3"
+                                                style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">
+                                                AI Fluency for Builders</h4>
+                                            <a href="assets/certificati/certificato_AI_Fluency_for_Builders.pdf"
+                                                target="_blank" rel="noopener noreferrer"
+                                                class="btn btn-outline-primary mt-auto w-100"
+                                                style="border-radius: 30px;">
+                                                <i class="bi bi-eye me-2"></i>Visualizza
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <div class="cert-card shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center"
+                                            style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;">
+                                            <i class="bi bi-file-earmark-pdf"
+                                                style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                                            <h4 class="mb-3"
+                                                style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">
+                                                AI Fluency for Small Business</h4>
+                                            <a href="assets/certificati/certificato_AI_Fluency_for_Small_Business.pdf"
+                                                target="_blank" rel="noopener noreferrer"
+                                                class="btn btn-outline-primary mt-auto w-100"
+                                                style="border-radius: 30px;">
+                                                <i class="bi bi-eye me-2"></i>Visualizza
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1380,12 +1432,12 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 
-    <!-- GSAP + ScrollTrigger + ScrollTo (Premium Animation Engine) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"
-        crossorigin="anonymous"></script>
+    <!-- GSAP + ScrollTrigger + ScrollTo (Premium Animation Engine - Local) -->
+    <script src="js/gsap/gsap.min.js"></script>
+    <script src="js/gsap/ScrollTrigger.min.js"></script>
+    <script src="js/gsap/ScrollSmoother.min.js"></script>
+    <script src="js/gsap/ScrollToPlugin.min.js"></script>
+    <script src="js/gsap/SplitText.min.js"></script>
 
     <!-- Premium: 3D Particle Canvas Engine -->
     <script src="js/particles.js"></script>

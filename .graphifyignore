@@ -1,0 +1,16 @@
+# Ignore third party GSAP folder
+gsap-public/
+node_modules/
+.git/
+.jules/
+*.map
+*.pdf
+assets/certificati/
+js/gsap/
+js/particles.js
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.webp
+*.gif

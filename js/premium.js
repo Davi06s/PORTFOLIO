@@ -15,9 +15,21 @@
         return;
     }
 
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
     const isMobile = window.innerWidth < 768;
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ── Initialize ScrollSmoother (Premium Smooth Scroll) ──
+    let smoother;
+    if (!isMobile && !prefersReduced && typeof ScrollSmoother !== 'undefined') {
+        smoother = ScrollSmoother.create({
+            wrapper: '#smooth-wrapper',
+            content: '#smooth-content',
+            smooth: 1.5,
+            effects: true,
+            smoothTouch: 0.1
+        });
+    }
 
     // ────────────────────────────────────────────────────────────────────────
     // 1. SCROLL PROGRESS BAR
@@ -99,6 +111,32 @@
     // 4. GSAP SCROLL REVEAL ANIMATIONS
     // ────────────────────────────────────────────────────────────────────────
     if (!prefersReduced) {
+        // ── SplitText Hero Title Animation ──
+        const heroTitle = document.querySelector('.masthead-heading');
+        if (heroTitle) {
+            const split = new SplitText(heroTitle, { type: 'chars' });
+            gsap.set(split.chars, { 
+                opacity: 0, 
+                y: 60,
+                transformPerspective: 600,
+                rotateX: -80,
+                rotateY: 10
+            });
+            gsap.to(split.chars, {
+                opacity: 1,
+                y: 0,
+                rotateX: 0,
+                rotateY: 0,
+                duration: 1.2,
+                stagger: {
+                    amount: 0.5,
+                    from: "center"
+                },
+                ease: 'back.out(1.5)',
+                delay: 0.2
+            });
+        }
+
         // Reveal Up
         gsap.utils.toArray('.reveal-up').forEach(el => {
             gsap.to(el, {
@@ -229,14 +267,17 @@
             });
         }
 
-        // ── Section heading animations ──
+        // ── Section heading animations with SplitText ──
         gsap.utils.toArray('.page-section-heading').forEach(heading => {
-            gsap.from(heading, {
+            const splitHeading = new SplitText(heading, { type: 'chars' });
+            gsap.from(splitHeading.chars, {
                 opacity: 0,
-                y: 30,
-                scale: 0.95,
-                duration: 0.7,
-                ease: 'power2.out',
+                scale: 0.2,
+                y: 40,
+                rotateX: -80,
+                stagger: 0.03,
+                duration: 0.8,
+                ease: 'back.out(1.5)',
                 scrollTrigger: {
                     trigger: heading,
                     start: 'top 85%',
@@ -312,11 +353,21 @@
                 const rect = btn.getBoundingClientRect();
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
-                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                gsap.to(btn, {
+                    x: x * 0.35,
+                    y: y * 0.35,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
             });
 
             btn.addEventListener('mouseleave', () => {
-                btn.style.transform = 'translate(0, 0)';
+                gsap.to(btn, {
+                    x: 0,
+                    y: 0,
+                    duration: 0.5,
+                    ease: "elastic.out(1, 0.3)"
+                });
             });
         });
     }
@@ -329,22 +380,35 @@
             let rect;
             card.addEventListener('mouseenter', () => {
                 rect = card.getBoundingClientRect(); // Cache rect on enter
-                card.style.transition = 'none';
             });
 
             card.addEventListener('mousemove', (e) => {
                 if (!rect) rect = card.getBoundingClientRect(); // Fallback if missing
                 const x = (e.clientX - rect.left) / rect.width;
                 const y = (e.clientY - rect.top) / rect.height;
-                const rotateX = (0.5 - y) * 12;
-                const rotateY = (x - 0.5) * 12;
-                card.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
+                const rotateX = (0.5 - y) * 15;
+                const rotateY = (x - 0.5) * 15;
+                gsap.to(card, {
+                    transformPerspective: 600,
+                    rotateX: rotateX,
+                    rotateY: rotateY,
+                    scale: 1.04,
+                    duration: 0.3,
+                    ease: "power2.out",
+                    overwrite: "auto"
+                });
             });
 
             card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(600px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-                card.style.transition = 'transform 0.5s ease';
-                setTimeout(() => { card.style.transition = ''; }, 500);
+                gsap.to(card, {
+                    transformPerspective: 600,
+                    rotateX: 0,
+                    rotateY: 0,
+                    scale: 1,
+                    duration: 0.5,
+                    ease: "power2.out",
+                    overwrite: "auto"
+                });
             });
         });
     }
@@ -358,12 +422,15 @@
             if (targetId === '#' || targetId === '#page-top') return;
             const targetEl = document.querySelector(targetId);
             if (targetEl) {
-                e.preventDefault();
-                gsap.to(window, {
-                    scrollTo: { y: targetEl, offsetY: 70 },
-                    duration: 1,
-                    ease: 'power2.inOut'
-                });
+                if (smoother) {
+                    smoother.scrollTo(targetEl, true, "top 70px");
+                } else {
+                    gsap.to(window, {
+                        scrollTo: { y: targetEl, offsetY: 70 },
+                        duration: 1,
+                        ease: 'power2.inOut'
+                    });
+                }
             }
         });
     });

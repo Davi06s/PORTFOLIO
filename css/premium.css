@@ -813,3 +813,20 @@
     transition: opacity 0.1s linear;
 }
 
+/* Fix for SplitText text-gradient-animated visibility */
+.masthead-heading div, .masthead-heading span {
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-primary) 50%, #ffffff 100%) !important;
+    background-size: 300% 300% !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    animation: textGrad 4s ease infinite !important;
+    display: inline-block !important;
+}
+.masthead-heading {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+}
+
