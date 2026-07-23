@@ -9,9 +9,9 @@
 
     const ctx = canvas.getContext('2d');
     const isMobile = window.innerWidth < 768;
-    const PARTICLE_COUNT = isMobile ? 40 : 100;
-    const CONNECTION_DIST = isMobile ? 100 : 150;
-    const MOUSE_RADIUS = 120;
+    const PARTICLE_COUNT = isMobile ? 65 : 140;
+    const CONNECTION_DIST = isMobile ? 120 : 170;
+    const MOUSE_RADIUS = 150;
 
     let width, height;
     let mouse = { x: -9999, y: -9999 };
@@ -19,9 +19,8 @@
     let animFrame;
 
     function resize() {
-        const header = canvas.closest('.masthead') || canvas.parentElement;
-        width = canvas.width = header.offsetWidth;
-        height = canvas.height = header.offsetHeight;
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
     }
 
     class Particle {
@@ -123,20 +122,16 @@
         animate();
     }
 
-    // Mouse tracking relative to masthead
-    const masthead = canvas.closest('.masthead') || canvas.parentElement;
-    masthead.addEventListener('mousemove', (e) => {
-        const rect = masthead.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-    });
-    masthead.addEventListener('mouseleave', () => {
+    // Global mouse tracking relative to viewport window
+    window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    }, { passive: true });
+    window.addEventListener('mouseleave', () => {
         mouse.x = -9999;
         mouse.y = -9999;
     });
 
-    // Enable pointer events on masthead so we can track mouse
-    masthead.style.pointerEvents = 'auto';
     canvas.style.pointerEvents = 'none';
 
     window.addEventListener('resize', () => {

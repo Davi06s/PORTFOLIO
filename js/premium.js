@@ -71,7 +71,7 @@
     // ────────────────────────────────────────────────────────────────────────
     const typedEl = document.getElementById('typedSubtitle');
     if (typedEl && !prefersReduced) {
-        const words = ['Full Stack Developer', 'Web App Architect', 'UI/UX Enthusiast', 'Problem Solver'];
+        const words = ['Full Stack Developer', 'React & Next.js Specialist', 'Node.js & Web Architect', 'UI/UX & AI Enthusiast', 'Graphify & GSAP Creator'];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -444,10 +444,10 @@
         window.addEventListener('scroll', () => {
             const current = window.scrollY;
             if (current > 300 && current > lastScroll) {
-                nav.style.transform = 'translateY(-100%)';
+                nav.style.transform = 'translateX(-50%) translateY(-180%)';
                 nav.style.opacity = '0';
             } else {
-                nav.style.transform = 'translateY(0)';
+                nav.style.transform = 'translateX(-50%) translateY(0)';
                 nav.style.opacity = '1';
             }
             lastScroll = current;
@@ -634,7 +634,7 @@
     // ────────────────────────────────────────────────────────────────────────
     // 13. SERVICES STAGGERED REVEAL
     // ────────────────────────────────────────────────────────────────────────
-    const serviceItems = document.querySelectorAll('.services-list .reveal-item');
+    const serviceItems = document.querySelectorAll('.services-grid .reveal-item');
     if (serviceItems.length && !prefersReduced) {
         gsap.to(serviceItems, {
             opacity: 1,
@@ -643,7 +643,7 @@
             stagger: 0.15,
             ease: 'power3.out',
             scrollTrigger: {
-                trigger: '.services-list',
+                trigger: '.services-grid',
                 start: 'top 85%',
                 once: true
             }
@@ -692,5 +692,404 @@
             });
         }
     }
+
+    // ────────────────────────────────────────────────────────────────────────
+    // 15. GSAP SCROLLSPY NAV LINK HIGHLIGHTING & BACK TO TOP BUTTON
+    // ────────────────────────────────────────────────────────────────────────
+    const sections = document.querySelectorAll('section[id], header[id]');
+    const navLinks = document.querySelectorAll('#mainNav .nav-link');
+    const backToTopBtn = document.getElementById('backToTop');
+
+    if (sections.length && navLinks.length) {
+        sections.forEach(section => {
+            const sectionId = section.getAttribute('id');
+            const correspondingLink = document.querySelector(`#mainNav .nav-link[href="#${sectionId}"]`);
+            if (!correspondingLink) return;
+
+            ScrollTrigger.create({
+                trigger: section,
+                start: 'top 35%',
+                end: 'bottom 35%',
+                onToggle: (self) => {
+                    if (self.isActive) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        correspondingLink.classList.add('active');
+                    }
+                }
+            });
+        });
+    }
+
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.style.opacity = '1';
+                backToTopBtn.style.visibility = 'visible';
+            } else {
+                backToTopBtn.style.opacity = '0';
+                backToTopBtn.style.visibility = 'hidden';
+            }
+        }, { passive: true });
+    }
+
+    // ────────────────────────────────────────────────────────────────────────
+    // 16. CONTINUOUS 3D SCROLL TRANSITIONS (APERTURA E CHIUSURA DI OGNI SEZIONE)
+    // ────────────────────────────────────────────────────────────────────────
+    const fullScreenSections = document.querySelectorAll('section[id], header.masthead');
+    fullScreenSections.forEach(section => {
+        const heading = section.querySelector('.page-section-heading, .masthead-heading');
+        const items = section.querySelectorAll('.service-item, .portfolio-item, .timeline-content, .cert-card, .stat-item, .project-stack-card, .badge, .reveal-item');
+
+        // Fix text clipping block glitches on headings
+        if (heading) {
+            heading.style.background = 'transparent';
+            heading.style.webkitBackgroundClip = 'initial';
+            heading.style.backgroundClip = 'initial';
+            heading.style.webkitTextFillColor = '#00f0ff';
+            const innerElements = heading.querySelectorAll('div, span');
+            innerElements.forEach(el => {
+                el.style.background = 'transparent';
+                el.style.webkitBackgroundClip = 'initial';
+                el.style.backgroundClip = 'initial';
+                el.style.webkitTextFillColor = '#00f0ff';
+            });
+
+            // Inject Ambient Glow Aura behind section headings if not present
+            if (!heading.querySelector('.heading-ambient-glow')) {
+                const glow = document.createElement('div');
+                glow.className = 'heading-ambient-glow';
+                heading.prepend(glow);
+            }
+        }
+
+        if (!prefersReduced) {
+            // Section Apertura (enter) & Chiusura (exit) Timeline
+            const sectionTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top bottom-=50',
+                    end: 'bottom top+=50',
+                    scrub: 0.7
+                }
+            });
+
+            // Phase 1: Apertura (Scale up + Fade in + Perspective rotateX into view)
+            sectionTl.fromTo(section,
+                { opacity: 0.15, scale: 0.85, rotateX: 12, y: 80 },
+                { opacity: 1.0, scale: 1.0, rotateX: 0, y: 0, ease: 'power2.out', duration: 0.5 }
+            )
+            // Phase 2: Chiusura (Scale down + Fade out + Perspective rotateX out of view)
+            .to(section,
+                { opacity: 0.15, scale: 0.85, rotateX: -12, y: -80, ease: 'power2.in', duration: 0.5 }
+            );
+
+            // Heading & Internal Items Spring Stagger Reveal
+            if (heading) {
+                gsap.fromTo(heading,
+                    { opacity: 0, y: 50, scale: 0.88, rotateX: 15 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        rotateX: 0,
+                        duration: 0.9,
+                        ease: 'back.out(1.5)',
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 75%',
+                            toggleActions: 'play reverse play reverse'
+                        }
+                    }
+                );
+            }
+
+            if (items.length) {
+                gsap.fromTo(items,
+                    { opacity: 0, y: 40, scale: 0.92 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.8,
+                        stagger: 0.1,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 70%',
+                            toggleActions: 'play reverse play reverse'
+                        }
+                    }
+                );
+            }
+        }
+    });
+
+    // ────────────────────────────────────────────────────────────────────────
+    // 17. EYE-CATCHING 3D INTERACTIVE MOUSE TILT ON CARDS
+    // ────────────────────────────────────────────────────────────────────────
+    if (!isMobile && !prefersReduced) {
+        const interactiveCards = document.querySelectorAll('.service-item, .portfolio-item, .timeline-content, .cert-card, .stat-item, .project-stack-card');
+        interactiveCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const rotX = (-y / (rect.height / 2)) * 9; // max 9 deg tilt
+                const rotY = (x / (rect.width / 2)) * 9;
+                card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-8px) scale(1.02)`;
+                card.style.transition = 'transform 0.1s ease-out';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)';
+                card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+            });
+        });
+    }
+
+    // ────────────────────────────────────────────────────────────────────────
+    // 18. 3D FANNED CARDSTACK CAROUSEL ENGINE (INTERACTIVE DRAG & CLICK)
+    // ────────────────────────────────────────────────────────────────────────
+    function initCardStack() {
+        const wrapper = document.getElementById('cardStackWrapper');
+        const fan = document.getElementById('cardStackFan');
+        const dotsContainer = document.getElementById('cardStackDots');
+        const extLink = document.getElementById('cardStackActiveLink');
+        if (!wrapper || !fan) return;
+
+        const items = Array.from(fan.querySelectorAll('.card-stack-item'));
+        const len = items.length;
+        if (!len) return;
+
+        let active = 0;
+        let isHovered = false;
+        let isDragging = false;
+        let startX = 0;
+        let currentDragX = 0;
+
+        const maxVisible = 5;
+        const maxOffset = Math.floor(maxVisible / 2);
+        const spreadDeg = 44;
+        const stepDeg = maxOffset > 0 ? spreadDeg / maxOffset : 0;
+        const activeScale = 1.03;
+        const inactiveScale = 0.93;
+        const activeLiftPx = 22;
+        const depthPx = 130;
+        const tiltXDeg = 12;
+
+        function getCardSpacing() {
+            const width = window.innerWidth;
+            if (width < 576) return 140;
+            if (width < 768) return 180;
+            return 260;
+        }
+
+        function signedOffset(i, active, len) {
+            const raw = i - active;
+            if (len <= 1) return raw;
+            const alt = raw > 0 ? raw - len : raw + len;
+            return Math.abs(alt) < Math.abs(raw) ? alt : raw;
+        }
+
+        // Render Dots
+        if (dotsContainer) {
+            dotsContainer.innerHTML = '';
+            items.forEach((_, idx) => {
+                const dot = document.createElement('button');
+                dot.className = `card-stack-dot ${idx === active ? 'active' : ''}`;
+                dot.setAttribute('aria-label', `Go to project ${idx + 1}`);
+                dot.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    setActive(idx);
+                });
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function updatePositions(dragDelta = 0) {
+            const cardSpacing = getCardSpacing();
+
+            items.forEach((item, i) => {
+                const off = signedOffset(i, active, len);
+                const abs = Math.abs(off);
+                const visible = abs <= maxOffset;
+
+                if (!visible) {
+                    item.style.opacity = '0';
+                    item.style.pointerEvents = 'none';
+                    return;
+                }
+
+                const isActive = off === 0;
+                let rotateZ = off * stepDeg;
+                let x = off * cardSpacing;
+                let y = abs * 10;
+                let z = -abs * depthPx;
+                let scale = isActive ? activeScale : inactiveScale;
+                let lift = isActive ? -activeLiftPx : 0;
+                let rotateX = isActive ? 0 : tiltXDeg;
+                let zIndex = 100 - abs;
+
+                // Realtime drag effect on active card & fan
+                if (isDragging) {
+                    item.style.transition = 'none';
+                    if (isActive) {
+                        x += dragDelta;
+                        rotateZ += (dragDelta * 0.05);
+                    } else {
+                        x += (dragDelta * 0.2);
+                    }
+                } else {
+                    item.style.transition = 'transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease';
+                }
+
+                item.classList.toggle('is-active', isActive);
+                item.style.zIndex = zIndex;
+                item.style.opacity = isActive ? '1' : '0.82';
+                item.style.pointerEvents = 'auto';
+
+                // Disable inner action links on non-active cards so clicking anywhere brings the card to center
+                const actions = item.querySelector('.card-actions');
+                if (actions) {
+                    actions.style.pointerEvents = isActive ? 'auto' : 'none';
+                }
+
+                item.style.transform = `translate3d(${x}px, ${y + lift}px, ${z}px) rotateZ(${rotateZ}deg) rotateX(${rotateX}deg) scale(${scale})`;
+            });
+
+            // Update dots
+            if (dotsContainer) {
+                const dots = dotsContainer.querySelectorAll('.card-stack-dot');
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === active);
+                });
+            }
+
+            // Update external link
+            if (extLink && items[active]) {
+                const href = items[active].getAttribute('data-href');
+                if (href) extLink.setAttribute('href', href);
+            }
+        }
+
+        function setActive(index) {
+            active = ((index % len) + len) % len;
+            updatePositions(0);
+        }
+
+        function next() {
+            setActive(active + 1);
+        }
+
+        function prev() {
+            setActive(active - 1);
+        }
+
+        // Direct Card Click & Drag Threshold Tracking
+        let isMouseDown = false;
+        let clickedItemIndex = null;
+
+        items.forEach((item, i) => {
+            item.addEventListener('mousedown', (e) => {
+                if (e.button !== 0) return;
+                isMouseDown = true;
+                isDragging = false;
+                startX = e.clientX;
+                currentDragX = 0;
+                clickedItemIndex = i;
+            });
+
+            item.addEventListener('touchstart', (e) => {
+                if (e.touches.length > 0) {
+                    isMouseDown = true;
+                    isDragging = false;
+                    startX = e.touches[0].clientX;
+                    currentDragX = 0;
+                    clickedItemIndex = i;
+                }
+            }, { passive: true });
+
+            item.addEventListener('click', (e) => {
+                if (active !== i) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setActive(i);
+                }
+            }, true);
+        });
+
+        // Keyboard Navigation
+        wrapper.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prev();
+            if (e.key === 'ArrowRight') next();
+        });
+
+        // Hover Autoplay pause
+        wrapper.addEventListener('mouseenter', () => { isHovered = true; });
+        wrapper.addEventListener('mouseleave', () => { isHovered = false; });
+
+        // Real-time Drag & Pointer Movement Engine
+        window.addEventListener('mousemove', (e) => {
+            if (!isMouseDown) return;
+            const deltaX = e.clientX - startX;
+            if (!isDragging && Math.abs(deltaX) > 6) {
+                isDragging = true;
+            }
+            if (isDragging) {
+                currentDragX = deltaX;
+                updatePositions(currentDragX);
+            }
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isMouseDown || e.touches.length === 0) return;
+            const deltaX = e.touches[0].clientX - startX;
+            if (!isDragging && Math.abs(deltaX) > 6) {
+                isDragging = true;
+            }
+            if (isDragging) {
+                currentDragX = deltaX;
+                updatePositions(currentDragX);
+            }
+        }, { passive: true });
+
+        function handlePointerUp() {
+            if (!isMouseDown) return;
+            isMouseDown = false;
+
+            if (isDragging) {
+                isDragging = false;
+                if (currentDragX < -65) {
+                    next();
+                } else if (currentDragX > 65) {
+                    prev();
+                } else {
+                    updatePositions(0);
+                }
+            } else {
+                // Clean click without dragging -> Activate clicked side card
+                if (clickedItemIndex !== null && clickedItemIndex !== active) {
+                    setActive(clickedItemIndex);
+                }
+            }
+            currentDragX = 0;
+            clickedItemIndex = null;
+        }
+
+        window.addEventListener('mouseup', handlePointerUp);
+        window.addEventListener('touchend', handlePointerUp, { passive: true });
+
+        // Autoplay Timer (2.8s)
+        setInterval(() => {
+            if (!isHovered && !isDragging && !isMouseDown) next();
+        }, 2800);
+
+        // Window resize re-calculation
+        window.addEventListener('resize', () => updatePositions(0));
+
+        // Initial setup
+        updatePositions(0);
+    }
+
+    initCardStack();
 
 })();

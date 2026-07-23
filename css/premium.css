@@ -36,23 +36,27 @@
     mix-blend-mode: screen;
 }
 
-/* ── Hero Canvas ── */
+/* ── Global Constellation Canvas ── */
 #heroCanvas {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 0;
-    pointer-events: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
 }
 
-/* ── Floating Shapes ── */
+/* ── Global Floating Shapes ── */
 .floating-shapes {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+    overflow: hidden !important;
 }
 .floating-shape {
     position: absolute;
@@ -194,7 +198,7 @@
 
 /* ── Journey / Timeline ── */
 #journey {
-    background: linear-gradient(135deg, #0f0032 0%, #050b1f 100%) !important;
+    background: transparent !important;
     position: relative;
     overflow: hidden;
 }
@@ -251,15 +255,17 @@
     width: 45%;
     padding: 1.5rem 2rem;
     border-radius: var(--border-radius-md);
-    background: var(--bg-elevated);
-    border: 1px solid rgba(255,255,255,0.05);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background: rgba(18, 24, 38, 0.75) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     transition: var(--transition-normal);
 }
 .timeline-content:hover {
     border-color: rgba(0,240,255,0.5);
     transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3), 0 0 25px rgba(0,240,255,0.15), inset 0 0 20px rgba(139,92,246,0.1);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 25px rgba(0,240,255,0.2), inset 0 0 20px rgba(139,92,246,0.15);
 }
 .timeline-dot {
     position: absolute;
@@ -464,12 +470,12 @@
    12. SERVICES SECTION (WHITE BACKGROUND CONTRAST)
    ──────────────────────────────────────────────────────────────────────── */
 .services-section {
-    background-color: #0F141E !important;
+    background-color: transparent !important;
     border-radius: 40px 40px 0 0;
     padding: 5rem 1.5rem;
     position: relative;
     z-index: 5;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: none !important;
 }
 @media (min-width: 640px) {
     .services-section { border-radius: 50px 50px 0 0; }
@@ -579,7 +585,7 @@
    13. STICKY STACKING PORTFOLIO SECTION
    ──────────────────────────────────────────────────────────────────────── */
 .portfolio-stack-section {
-    background-color: #0C0C0C !important;
+    background-color: transparent !important;
     border-radius: 40px 40px 0 0;
     margin-top: -2.5rem; /* -mt-10 sm:-mt-12 md:-mt-14 */
     position: relative;
@@ -626,8 +632,10 @@
 
 .project-stack-card {
     width: 100%;
-    background-color: #0C0C0C;
-    border: 2px solid #D7E2EA;
+    background-color: rgba(14, 18, 28, 0.88) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 2px solid rgba(215, 226, 234, 0.2);
     border-radius: 30px;
     padding: 1.5rem;
     display: flex;
