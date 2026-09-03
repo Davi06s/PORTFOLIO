@@ -54,38 +54,52 @@
         <div class="floating-shape"></div>
         <div class="floating-shape"></div>
     </div>
-    <!-- Navigation (Modern Smartphone Floating Pill Navbar with Footer SVG Animated Outline) -->
-    <nav class="navbar navbar-expand-lg fixed-top main-phone-nav" id="mainNav">
-        <div class="container main-nav-container flex-nowrap align-items-center">
-            <!-- Brand / Logo -->
-            <a class="navbar-brand text-gradient-animated d-flex align-items-center me-2 me-lg-4" href="#page-top" style="letter-spacing: 2px;">
+    <!-- Navigation (Revolut-Inspired Floating Dock / Navbar) -->
+    <nav class="navbar navbar-expand-lg fixed-top revolut-navbar" id="mainNav">
+        <div class="container revolut-nav-container align-items-center">
+            <!-- Brand / Logo (Desktop) -->
+            <a class="navbar-brand text-gradient-animated d-none d-lg-flex align-items-center me-4" href="#page-top" style="letter-spacing: 2px;">
                 <i class="bi bi-code-slash me-2 fs-5 text-cyan" style="color: var(--accent-primary);"></i>PORTFOLIO
             </a>
-            
-            <!-- Mobile Toggle -->
-            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded border-0 d-lg-none ms-auto"
-                type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
-                style="padding: 0.4rem 0.6rem; background: rgba(0, 240, 255, 0.1) !important; color: var(--accent-primary) !important;">
-                <i class="bi bi-grid-fill fs-5"></i>
-            </button>
 
-            <!-- Navbar Links with SVG Animated Outline (Exact Footer Style Mechanics) -->
-            <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
-                <div class="header-svg-nav nav">
-                    <div class="container nav-container">
-                        <a href="#portfolio" class="btn nav-btn nav-link"><i class="bi bi-collection-fill nav-icon"></i>Portfolio</a>
-                        <a href="#about" class="btn nav-btn nav-link"><i class="bi bi-person-badge-fill nav-icon"></i>About</a>
-                        <a href="#services" class="btn nav-btn nav-link"><i class="bi bi-cpu-fill nav-icon"></i>Competenze</a>
-                        <a href="#journey" class="btn nav-btn nav-link"><i class="bi bi-rocket-takeoff-fill nav-icon"></i>Percorso</a>
-                        <a href="#certificati" class="btn nav-btn nav-link"><i class="bi bi-patch-check-fill nav-icon"></i>Certificati</a>
-                        <a href="#contact" class="btn nav-btn nav-link"><i class="bi bi-envelope-fill nav-icon"></i>Contact</a>
-
-                        <svg class="outline" overflow="visible" width="780" height="60" viewBox="0 0 780 60" xmlns="http://www.w3.org/2000/svg">
-                            <rect class="rect" pathLength="100" x="0" y="0" width="780" height="60" fill="transparent" stroke-width="4"></rect>
-                        </svg>
+            <!-- Revolut Tab Items -->
+            <div class="revolut-tab-bar" id="revolutTabBar">
+                <a href="#portfolio" class="revolut-tab nav-link active" data-nav="portfolio" aria-label="Vai a Portfolio">
+                    <div class="revolut-tab-pill">
+                        <i class="bi bi-collection-fill revolut-tab-icon"></i>
+                        <span class="revolut-tab-label">Portfolio</span>
                     </div>
-                </div>
+                </a>
+                <a href="#about" class="revolut-tab nav-link" data-nav="about" aria-label="Vai a About">
+                    <div class="revolut-tab-pill">
+                        <i class="bi bi-person-fill revolut-tab-icon"></i>
+                        <span class="revolut-tab-label">About</span>
+                    </div>
+                </a>
+                <a href="#services" class="revolut-tab nav-link" data-nav="services" aria-label="Vai a Competenze">
+                    <div class="revolut-tab-pill">
+                        <i class="bi bi-cpu-fill revolut-tab-icon"></i>
+                        <span class="revolut-tab-label">Skills</span>
+                    </div>
+                </a>
+                <a href="#journey" class="revolut-tab nav-link" data-nav="journey" aria-label="Vai a Percorso">
+                    <div class="revolut-tab-pill">
+                        <i class="bi bi-rocket-takeoff-fill revolut-tab-icon"></i>
+                        <span class="revolut-tab-label">Percorso</span>
+                    </div>
+                </a>
+                <a href="#certificati" class="revolut-tab nav-link" data-nav="certificati" aria-label="Vai a Certificati">
+                    <div class="revolut-tab-pill">
+                        <i class="bi bi-patch-check-fill revolut-tab-icon"></i>
+                        <span class="revolut-tab-label">Certificati</span>
+                    </div>
+                </a>
+                <a href="#contact" class="revolut-tab nav-link" data-nav="contact" aria-label="Vai a Contatti">
+                    <div class="revolut-tab-pill">
+                        <i class="bi bi-envelope-fill revolut-tab-icon"></i>
+                        <span class="revolut-tab-label">Contatti</span>
+                    </div>
+                </a>
             </div>
         </div>
     </nav>
@@ -310,8 +324,7 @@
                         class="img-fluid about-image shadow-lg"
                         style="max-height: 500px; width: 100%; object-fit: cover; border: 2px solid var(--accent-primary); border-radius: var(--border-radius-lg);">
                 </div>
-                <div class="col-lg-6 me-auto reveal-right"
-                    style="border-left: 2px solid rgba(255, 255, 255, 0.1); padding-left: 2rem;">
+                <div class="col-lg-6 me-auto reveal-right about-text-col">
                     <h3 class="mb-3" style="color: var(--accent-primary); font-family: var(--font-heading);">Chi sono
                     </h3>
                     <p class="lead mb-4 char-scroll-reveal">
@@ -388,7 +401,7 @@
                     <div class="counter-label">Progetti</div>
                 </div>
                 <div class="stat-item">
-                    <div class="counter-number" data-target="14">0</div>
+                    <div class="counter-number" data-target="15">0</div>
                     <div class="counter-label">Certificati</div>
                 </div>
                 <div class="stat-item">
@@ -577,7 +590,7 @@
                         <div class="timeline-icon"><i class="bi bi-award"></i></div>
                         <span class="timeline-date">2025 - 2026</span>
                         <h4 class="timeline-title">Certificazioni & AI</h4>
-                        <p class="timeline-desc">Ottengo 14 certificazioni professionali e mi specializzo
+                        <p class="timeline-desc">Ottengo 15 certificazioni professionali e mi specializzo
                             nell'integrazione dell'Intelligenza Artificiale nei flussi di sviluppo.</p>
                     </div>
                     <div class="timeline-spacer"></div>
@@ -649,7 +662,7 @@
                         <h4 class="mb-3"
                             style="font-size: 1.5rem; color: var(--text-primary); font-family: var(--font-heading);">
                             Anthropic</h4>
-                        <p class="mb-4" style="color: var(--text-secondary); font-size: 1rem;">12 Certificati</p>
+                        <p class="mb-4" style="color: var(--text-secondary); font-size: 1rem;">13 Certificati</p>
                         <div class="btn btn-outline-primary mt-auto" style="border-radius: 30px;">
                             <i class="bi bi-grid-fill me-2"></i>Sfoglia Certificati
                         </div>
@@ -1388,6 +1401,22 @@
                                                 style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">
                                                 AI Fluency for Small Business</h4>
                                             <a href="assets/certificati/certificato_AI_Fluency_for_Small_Business.pdf"
+                                                target="_blank" rel="noopener noreferrer"
+                                                class="btn btn-outline-primary mt-auto w-100"
+                                                style="border-radius: 30px;">
+                                                <i class="bi bi-eye me-2"></i>Visualizza
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <div class="cert-card shadow-sm p-4 text-center h-100 d-flex flex-column align-items-center"
+                                            style="border-radius: var(--border-radius-md); background-color: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease;">
+                                            <i class="bi bi-file-earmark-pdf"
+                                                style="font-size: 4rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                                            <h4 class="mb-3"
+                                                style="font-size: 1.2rem; color: var(--text-primary); font-family: var(--font-heading);">
+                                                AI Fluency for Creative Work</h4>
+                                            <a href="assets/certificati/certificato_AI_Fluency_for_Creative_Work.pdf"
                                                 target="_blank" rel="noopener noreferrer"
                                                 class="btn btn-outline-primary mt-auto w-100"
                                                 style="border-radius: 30px;">

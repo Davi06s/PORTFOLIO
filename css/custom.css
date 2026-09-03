@@ -96,300 +96,15 @@ p.lead {
     color: var(--accent-primary) !important;
 }
 
-/* Navbar - Glassmorphism Smartphone Floating Pill Navbar with Footer SVG Animated Outline */
-#mainNav.main-phone-nav {
-    top: 15px !important;
-    left: 50% !important;
-    transform: translateX(-50%) translateY(0) !important;
-    width: calc(100% - 30px) !important;
-    max-width: 1240px !important;
-    border-radius: 20px !important;
-    background: rgba(14, 18, 28, 0.88) !important;
-    backdrop-filter: blur(20px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-    border: 1px solid rgba(0, 240, 255, 0.2) !important;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.15) !important;
-    padding: 0.4rem 1.2rem !important;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, background 0.3s ease !important;
-    z-index: 1050 !important;
+/* Note: Main Navigation styles are consolidated in the SVG Navbar section */
+.about-text-col {
+    padding-left: 1rem;
 }
-
-#mainNav.main-phone-nav .main-nav-container {
-    padding: 0 !important;
-}
-
-#mainNav .navbar-brand {
-    color: var(--text-primary);
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 1.15rem;
-    font-family: var(--font-heading);
-}
-
-#mainNav .navbar-brand:hover {
-    color: var(--accent-primary);
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-}
-
-/* Main Phone SVG Nav Container (Exact match to Footer SVG Navbar style & mechanics) */
-.phone-svg-nav.nav {
-    position: relative !important;
-    width: 760px !important;
-    height: 60px !important;
-    max-width: 100% !important;
-}
-
-.phone-svg-nav .nav-container {
-    position: absolute !important;
-    inset: 0 !important;
-    background: rgba(14, 18, 28, 0.85) !important;
-    backdrop-filter: blur(16px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-    border-radius: 12px !important;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-around !important;
-    align-items: center !important;
-    padding: 0.5em !important;
-}
-
-.phone-svg-nav .outline {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    pointer-events: none !important;
-    z-index: 2 !important;
-}
-
-.phone-svg-nav .rect {
-    stroke-dashoffset: 5 !important;
-    stroke-dasharray: 0 0 10 40 10 40 !important;
-    transition: 0.5s ease-in-out !important;
-    stroke: #00f0ff !important;
-    stroke-width: 4px !important;
-    fill: transparent !important;
-    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.8)) !important;
-}
-
-.phone-svg-nav .nav-container:hover .outline .rect {
-    transition: 999999s !important;
-    stroke-dashoffset: 1 !important;
-    stroke-dasharray: 0 !important;
-}
-
-.phone-svg-nav .btn.nav-btn.nav-link {
-    position: relative !important;
-    z-index: 3 !important;
-    padding: 0.5em 0.75em !important;
-    color: #e2f1fd !important;
-    cursor: pointer !important;
-    transition: 0.15s ease !important;
-    text-decoration: none !important;
-    font-family: var(--font-heading) !important;
-    font-weight: 700 !important;
-    font-size: 0.85rem !important;
-    letter-spacing: 1px !important;
-    text-transform: uppercase !important;
-    border-radius: 6px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    background: transparent !important;
-    border: none !important;
-    margin: 0 !important;
-}
-
-/* Icon styling next to labels */
-.phone-svg-nav .nav-icon {
-    font-size: 1rem !important;
-    margin-right: 0.45rem !important;
-    color: var(--accent-primary) !important;
-    transition: transform 0.2s ease, color 0.2s ease, filter 0.2s ease !important;
-    filter: drop-shadow(0 0 5px rgba(0, 240, 255, 0.4)) !important;
-}
-
-.phone-svg-nav .btn.nav-btn.nav-link:hover .nav-icon,
-.phone-svg-nav .btn.nav-btn.nav-link.active .nav-icon {
-    transform: scale(1.18) !important;
-    color: #ffffff !important;
-    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.9)) !important;
-}
-
-.phone-svg-nav .btn.nav-btn.nav-link:hover,
-.phone-svg-nav .btn.nav-btn.nav-link.active {
-    background: rgba(0, 240, 255, 0.16) !important;
-    color: #ffffff !important;
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.6) !important;
-}
-
-/* Hover & Active stroke-dasharray & stroke-dashoffset transitions for 6 links (Exact Footer SVG mechanism) */
-.phone-svg-nav .btn.nav-btn.nav-link:nth-child(1):hover ~ svg .rect,
-.phone-svg-nav .btn.nav-btn.nav-link:nth-child(1).active ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 0.4 6.4 86.4 6.4 0.4 !important;
-    stroke: #00f0ff !important;
-    filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.9)) !important;
-}
-
-.phone-svg-nav .btn.nav-btn.nav-link:nth-child(2):hover ~ svg .rect,
-.phone-svg-nav .btn.nav-btn.nav-link:nth-child(2).active ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 8.0 6.4 71.2 6.4 8.0 !important;
-    stroke: #c084fc !important;
-    filter: drop-shadow(0 0 12px rgba(192, 132, 252, 0.9)) !important;
-}
-
-.phone-svg-nav .btn.nav-btn.nav-link:nth-child(3):hover ~ svg .rect,
-.phone-svg-nav .btn.nav-btn.nav-link:nth-child(3).active ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 15.6 6.4 56.0 6.4 15.6 !important;
-    stroke: #34d399 !important;
-    filter: drop-shadow(0 0 12px rgba(52, 211, 153, 0.9)) !important;
-}
-
-.phone-svg-nav .btn.nav-btn.nav-link:nth-child(4):hover ~ svg .rect,
-.phone-svg-nav .btn.nav-btn.nav-link:nth-child(4).active ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 23.2 6.4 40.8 6.4 23.2 !important;
-    stroke: #fbbf24 !important;
-    filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.9)) !important;
-}
-
-.phone-svg-nav .btn.nav-btn.nav-link:nth-child(5):hover ~ svg .rect,
-.phone-svg-nav .btn.nav-btn.nav-link:nth-child(5).active ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 30.8 6.4 25.6 6.4 30.8 !important;
-    stroke: #818cf8 !important;
-    filter: drop-shadow(0 0 12px rgba(129, 140, 248, 0.9)) !important;
-}
-
-.phone-svg-nav .btn.nav-btn.nav-link:nth-child(6):hover ~ svg .rect,
-.phone-svg-nav .btn.nav-btn.nav-link:nth-child(6).active ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 33.4 6.2 21.2 6.2 33.0 !important;
-    stroke: #f43f5e !important;
-    filter: drop-shadow(0 0 12px rgba(244, 63, 94, 0.9)) !important;
-}
-
-.phone-svg-nav .btn.nav-btn.nav-link:hover ~ .outline .rect {
-    stroke-dashoffset: 0 !important;
-    transition: 0.5s !important;
-}
-
-/* Smartphone Mobile Dock Responsive Adaptation (<992px) */
-@media (max-width: 991.98px) {
-    #mainNav.main-phone-nav {
-        top: auto !important;
-        bottom: 15px !important;
-        left: 50% !important;
-        transform: translateX(-50%) translateY(0) !important;
-        width: calc(100% - 24px) !important;
-        max-width: 520px !important;
-        border-radius: 24px !important;
-        padding: 0.35rem 0.5rem !important;
-        box-shadow: 0 12px 40px rgba(0,0,0,0.8), 0 0 25px rgba(0, 240, 255, 0.25) !important;
+@media (min-width: 992px) {
+    .about-text-col {
+        border-left: 2px solid rgba(255, 255, 255, 0.1);
+        padding-left: 2rem;
     }
-
-    .main-phone-nav .navbar-collapse {
-        background: transparent !important;
-        border: none !important;
-        padding: 0 !important;
-        margin-top: 0 !important;
-    }
-
-    .phone-svg-nav.nav {
-        width: 100% !important;
-        height: auto !important;
-    }
-
-    .phone-svg-nav .nav-container {
-        position: relative !important;
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        scrollbar-width: none !important;
-        padding: 0.3rem !important;
-        justify-content: flex-start !important;
-        border-radius: 18px !important;
-    }
-
-    .phone-svg-nav .nav-container::-webkit-scrollbar {
-        display: none !important;
-    }
-
-    .phone-svg-nav .btn.nav-btn.nav-link {
-        flex: 0 0 auto !important;
-        font-size: 0.72rem !important;
-        padding: 0.45rem 0.65rem !important;
-        white-space: nowrap !important;
-    }
-
-    .phone-svg-nav .outline {
-        display: none !important;
-    }
-
-    #mainNav.main-phone-nav .navbar-brand {
-        display: none !important;
-    }
-
-    #mainNav.main-phone-nav .navbar-toggler {
-        display: none !important;
-    }
-
-    #mainNav.main-phone-nav .collapse:not(.show) {
-        display: block !important;
-    }
-}
-
-@media (max-width: 380px) {
-    #mainNav .navbar-brand {
-        font-size: 1.15rem;
-        letter-spacing: 1px;
-    }
-}
-
-#mainNav .navbar-brand:hover {
-    color: var(--accent-primary);
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
-}
-
-#mainNav .nav-link {
-    color: var(--text-secondary) !important;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    transition: var(--transition-fast);
-    margin: 0 0.25rem;
-    border-radius: var(--border-radius-sm);
-}
-
-#mainNav .nav-link:hover,
-#mainNav .nav-link.active {
-    color: var(--accent-primary) !important;
-    background: rgba(0, 240, 255, 0.08) !important;
-}
-
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        background: var(--bg-elevated);
-        margin-top: 1rem;
-        border-radius: var(--border-radius-md);
-        padding: 1rem;
-        border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    #mainNav .nav-link {
-        padding: 1rem !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    }
-}
-
-#mainNav .navbar-toggler {
-    background-color: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-primary) !important;
 }
 
 /* Masthead (Hero Section) */
@@ -2016,60 +1731,238 @@ ul.social-icon-list {
 .chip-indigo { background: rgba(99, 102, 241, 0.08) !important; color: #eef2ff !important; border: 1px solid rgba(99, 102, 241, 0.25) !important; }
 .chip-indigo:hover { background: rgba(99, 102, 241, 0.25) !important; border-color: #818cf8 !important; transform: translateY(-2px) scale(1.04) !important; }
 
-/* Navbar - Glassmorphism Smartphone Floating Pill Navbar with Footer SVG Animated Outline */
-#mainNav.main-phone-nav {
-    top: 15px !important;
-    left: 50% !important;
-    transform: translateX(-50%) translateY(0) !important;
-    width: calc(100% - 30px) !important;
-    max-width: 1240px !important;
-    border-radius: 20px !important;
-    background: rgba(14, 18, 28, 0.88) !important;
-    backdrop-filter: blur(20px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-    border: 1px solid rgba(0, 240, 255, 0.2) !important;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.15) !important;
-    padding: 0.4rem 1.2rem !important;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, background 0.3s ease !important;
-    z-index: 1050 !important;
-}
-
-#mainNav.main-phone-nav .main-nav-container {
-    padding: 0 !important;
-}
-
-#mainNav .navbar-brand {
-    color: var(--text-primary);
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 1.15rem;
-    font-family: var(--font-heading);
-}
-
-#mainNav .navbar-brand:hover {
-    color: var(--accent-primary);
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-}
-
 /* ==========================================================================
-   SVG ANIMATED OUTLINE NAV BAR (EXACT UIVERSE MECHANICS FROM USER CODE)
+   REVOLUT-INSPIRED FLOATING NAVBAR & MOBILE BOTTOM DOCK
    ========================================================================== */
-.header-svg-nav.nav,
+#mainNav.revolut-navbar {
+    position: fixed !important;
+    z-index: 1050 !important;
+    background: rgba(13, 16, 25, 0.92) !important;
+    backdrop-filter: blur(24px) saturate(190%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.09) !important;
+    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 240, 255, 0.12) !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, background 0.3s ease !important;
+}
+
+/* Desktop Presentation (>= 992px) - Sleek Floating Revolut Capsule Pill at the Top */
+@media (min-width: 992px) {
+    #mainNav.revolut-navbar {
+        top: 18px !important;
+        bottom: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) translateY(0) !important;
+        width: auto !important;
+        min-width: 820px !important;
+        max-width: 1080px !important;
+        border-radius: 36px !important;
+        padding: 0.45rem 1.4rem !important;
+    }
+
+    .revolut-nav-container {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .revolut-navbar .navbar-brand {
+        color: var(--text-primary);
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 1.15rem;
+        font-family: var(--font-heading);
+        text-decoration: none !important;
+        transition: var(--transition-fast);
+        margin: 0 !important;
+    }
+
+    .revolut-navbar .navbar-brand:hover {
+        color: var(--accent-primary);
+        text-shadow: 0 0 12px rgba(0, 240, 255, 0.7);
+    }
+
+    .revolut-tab-bar {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+    }
+
+    .revolut-tab {
+        text-decoration: none !important;
+        padding: 0 !important;
+        display: inline-flex !important;
+    }
+
+    .revolut-tab-pill {
+        display: inline-flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding: 8px 16px !important;
+        border-radius: 20px !important;
+        border: 1px solid transparent !important;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        color: #8e95a5 !important;
+        cursor: pointer !important;
+    }
+
+    .revolut-tab-icon {
+        font-size: 1.05rem !important;
+        color: #8e95a5 !important;
+        transition: color 0.2s ease, transform 0.2s ease !important;
+    }
+
+    .revolut-tab-label {
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        font-family: var(--font-heading) !important;
+        letter-spacing: 0.5px !important;
+        color: #8e95a5 !important;
+        transition: color 0.2s ease !important;
+    }
+
+    .revolut-tab:hover .revolut-tab-pill {
+        background: rgba(255, 255, 255, 0.06) !important;
+        color: #ffffff !important;
+        transform: translateY(-2px) !important;
+    }
+
+    .revolut-tab:hover .revolut-tab-icon,
+    .revolut-tab:hover .revolut-tab-label {
+        color: #ffffff !important;
+    }
+
+    /* Active State (The Iconic Revolut Capsule) */
+    .revolut-tab.active .revolut-tab-pill {
+        background: rgba(255, 255, 255, 0.12) !important;
+        border: 1px solid rgba(0, 240, 255, 0.35) !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 240, 255, 0.25) !important;
+        transform: translateY(-1px) !important;
+    }
+
+    .revolut-tab.active .revolut-tab-icon {
+        color: var(--accent-primary) !important;
+        filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.8)) !important;
+        transform: scale(1.1) !important;
+    }
+
+    .revolut-tab.active .revolut-tab-label {
+        color: #ffffff !important;
+        text-shadow: 0 0 8px rgba(0, 240, 255, 0.5) !important;
+    }
+}
+
+/* Smartphone / Mobile Presentation (< 992px) - Exact Revolut Floating Bottom Dock */
+@media (max-width: 991.98px) {
+    body {
+        padding-bottom: 95px !important;
+    }
+
+    #mainNav.revolut-navbar {
+        top: auto !important;
+        bottom: 14px !important;
+        bottom: max(14px, env(safe-area-inset-bottom, 14px)) !important;
+        left: 50% !important;
+        transform: translateX(-50%) translateY(0) !important;
+        width: calc(100% - 16px) !important;
+        max-width: 480px !important;
+        border-radius: 32px !important;
+        padding: 5px 6px !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .revolut-nav-container {
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .revolut-tab-bar {
+        display: flex !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 2px !important;
+    }
+
+    .revolut-tab {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        text-decoration: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 0 !important;
+    }
+
+    .revolut-tab-pill {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        padding: 6px 2px !important;
+        border-radius: 20px !important;
+        border: 1px solid transparent !important;
+        transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        cursor: pointer !important;
+    }
+
+    .revolut-tab-icon {
+        font-size: 1.22rem !important;
+        color: #8c96a5 !important;
+        margin-bottom: 2px !important;
+        transition: transform 0.2s ease, color 0.2s ease !important;
+        line-height: 1 !important;
+    }
+
+    .revolut-tab-label {
+        font-size: 0.65rem !important;
+        color: #8c96a5 !important;
+        font-weight: 500 !important;
+        font-family: var(--font-heading) !important;
+        letter-spacing: 0.2px !important;
+        white-space: nowrap !important;
+        line-height: 1.1 !important;
+        transition: color 0.2s ease !important;
+    }
+
+    /* Active Revolut Capsule Pill on Mobile (from image) */
+    .revolut-tab.active .revolut-tab-pill {
+        background: rgba(255, 255, 255, 0.12) !important;
+        border: 1px solid rgba(0, 240, 255, 0.35) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 12px rgba(0, 240, 255, 0.25) !important;
+        transform: translateY(-2px) !important;
+    }
+
+    .revolut-tab.active .revolut-tab-icon {
+        color: var(--accent-primary) !important;
+        filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.8)) !important;
+        transform: scale(1.12) !important;
+    }
+
+    .revolut-tab.active .revolut-tab-label {
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        text-shadow: 0 0 6px rgba(0, 240, 255, 0.5) !important;
+    }
+
+    /* Shift back to top button up on mobile so it doesn't collide with the dock */
+    #backToTop {
+        bottom: 85px !important;
+        right: 18px !important;
+    }
+}
+
+/* Footer SVG Nav (preserved for the footer quick links) */
 .footer-svg-nav.nav {
     position: relative !important;
     height: 60px !important;
+    width: 520px !important;
     max-width: 100% !important;
 }
 
-.header-svg-nav.nav {
-    width: 780px !important;
-}
-
-.footer-svg-nav.nav {
-    width: 520px !important;
-}
-
-.header-svg-nav .container.nav-container,
 .footer-svg-nav .container.nav-container {
     position: absolute !important;
     inset: 0 !important;
@@ -2084,7 +1977,6 @@ ul.social-icon-list {
     padding: 0.5em !important;
 }
 
-.header-svg-nav .outline,
 .footer-svg-nav .outline {
     position: absolute !important;
     inset: 0 !important;
@@ -2094,7 +1986,6 @@ ul.social-icon-list {
     z-index: 2 !important;
 }
 
-.header-svg-nav .rect,
 .footer-svg-nav .rect {
     stroke-dashoffset: 5 !important;
     stroke-dasharray: 0 0 10 40 10 40 !important;
@@ -2105,15 +1996,6 @@ ul.social-icon-list {
     filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.8)) !important;
 }
 
-/* UIverse Transition Mechanics */
-.header-svg-nav .container.nav-container:hover .outline .rect,
-.footer-svg-nav .container.nav-container:hover .outline .rect {
-    transition: 999999s !important;
-    stroke-dashoffset: 1 !important;
-    stroke-dasharray: 0 !important;
-}
-
-.header-svg-nav .btn.nav-btn,
 .footer-svg-nav .btn.nav-btn {
     position: relative !important;
     z-index: 3 !important;
@@ -2135,184 +2017,46 @@ ul.social-icon-list {
     margin: 0 !important;
 }
 
-.header-svg-nav .btn.nav-btn:hover,
-.header-svg-nav .btn.nav-btn.active,
-.footer-svg-nav .btn.nav-btn:hover,
-.footer-svg-nav .btn.nav-btn.active {
+.footer-svg-nav .btn.nav-btn:hover {
     background: rgba(0, 240, 255, 0.16) !important;
     color: #ffffff !important;
     text-shadow: 0 0 10px rgba(0, 240, 255, 0.7) !important;
 }
 
-/* Icons Next to Link Labels */
-.nav-icon {
-    font-size: 1.05rem !important;
-    margin-right: 0.45rem !important;
-    color: var(--accent-primary) !important;
-    transition: transform 0.2s ease, color 0.2s ease, filter 0.2s ease !important;
-    filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.6)) !important;
-}
-
-.btn.nav-btn:hover .nav-icon,
-.btn.nav-btn.active .nav-icon {
-    transform: scale(1.2) translateY(-1px) !important;
-    color: #ffffff !important;
-    filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.9)) !important;
-}
-
-/* Hover & Active SVG Stroke Dasharray Rules for Header Nav (6 Items - Perfect Top & Bottom Horizontal Alignment) */
-.header-svg-nav .btn.nav-btn:nth-child(1):hover ~ svg .rect,
-.header-svg-nav .btn.nav-btn:nth-child(1).active ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 0.8 6.2 82.4 6.2 4.4 !important;
-    stroke: #00f0ff !important;
-    filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.9)) !important;
-}
-
-.header-svg-nav .btn.nav-btn:nth-child(2):hover ~ svg .rect,
-.header-svg-nav .btn.nav-btn:nth-child(2).active ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 8.5 6.2 67.0 6.2 12.1 !important;
-    stroke: #c084fc !important;
-    filter: drop-shadow(0 0 12px rgba(192, 132, 252, 0.9)) !important;
-}
-
-.header-svg-nav .btn.nav-btn:nth-child(3):hover ~ svg .rect,
-.header-svg-nav .btn.nav-btn:nth-child(3).active ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 16.2 6.2 51.6 6.2 19.8 !important;
-    stroke: #34d399 !important;
-    filter: drop-shadow(0 0 12px rgba(52, 211, 153, 0.9)) !important;
-}
-
-.header-svg-nav .btn.nav-btn:nth-child(4):hover ~ svg .rect,
-.header-svg-nav .btn.nav-btn:nth-child(4).active ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 24.0 6.2 36.1 6.2 27.5 !important;
-    stroke: #fbbf24 !important;
-    filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.9)) !important;
-}
-
-.header-svg-nav .btn.nav-btn:nth-child(5):hover ~ svg .rect,
-.header-svg-nav .btn.nav-btn:nth-child(5).active ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 31.7 6.2 20.7 6.2 35.2 !important;
-    stroke: #818cf8 !important;
-    filter: drop-shadow(0 0 12px rgba(129, 140, 248, 0.9)) !important;
-}
-
-.header-svg-nav .btn.nav-btn:nth-child(6):hover ~ svg .rect,
-.header-svg-nav .btn.nav-btn:nth-child(6).active ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 39.4 6.2 5.3 6.2 42.9 !important;
-    stroke: #f43f5e !important;
-    filter: drop-shadow(0 0 12px rgba(244, 63, 94, 0.9)) !important;
-}
-
-/* Hover & Active SVG Stroke Dasharray Rules for Footer Nav (5 Items) */
-.footer-svg-nav .btn.nav-btn:nth-child(1):hover ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 1.2 7.8 77.2 7.8 6.0 !important;
-    stroke: #00f0ff !important;
-}
-
-.footer-svg-nav .btn.nav-btn:nth-child(2):hover ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 9.8 7.8 60.0 7.8 14.6 !important;
-    stroke: #c084fc !important;
-}
-
-.footer-svg-nav .btn.nav-btn:nth-child(3):hover ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 18.4 7.8 42.8 7.8 23.2 !important;
-    stroke: #34d399 !important;
-}
-
-.footer-svg-nav .btn.nav-btn:nth-child(4):hover ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 27.0 7.8 25.6 7.8 31.8 !important;
-    stroke: #fbbf24 !important;
-}
-
-.footer-svg-nav .btn.nav-btn:nth-child(5):hover ~ svg .rect {
-    stroke-dashoffset: 0 !important;
-    stroke-dasharray: 0 35.6 7.8 8.4 7.8 40.4 !important;
-    stroke: #818cf8 !important;
-}
-
-/* Exact UIverse Reset Rule from User Code (Restores Corner Brackets in Resting State) */
-.header-svg-nav .btn.nav-btn:hover ~ .outline .rect,
-.header-svg-nav .btn.nav-btn.active ~ .outline .rect,
-.footer-svg-nav .btn.nav-btn:hover ~ .outline .rect,
-.footer-svg-nav .btn.nav-btn.active ~ .outline .rect {
-    stroke-dashoffset: 5 !important;
-    stroke-dasharray: 0 0 10 40 10 40 !important;
-    transition: 0.5s !important;
-}
-
-/* Smartphone Mobile Dock Responsive Adaptation (<992px) */
-@media (max-width: 991.98px) {
-    #mainNav.main-phone-nav {
-        top: auto !important;
-        bottom: 15px !important;
-        left: 50% !important;
-        transform: translateX(-50%) translateY(0) !important;
-        width: calc(100% - 24px) !important;
-        max-width: 520px !important;
-        border-radius: 24px !important;
-        padding: 0.35rem 0.5rem !important;
-        box-shadow: 0 12px 40px rgba(0,0,0,0.8), 0 0 25px rgba(0, 240, 255, 0.25) !important;
-    }
-
-    .main-phone-nav .navbar-collapse {
-        background: transparent !important;
-        border: none !important;
-        padding: 0 !important;
-        margin-top: 0 !important;
-    }
-
-    .header-svg-nav.nav {
+/* ==========================================================================
+   FOOTER SVG NAV RESPONSIVE ADAPTATION (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .footer-svg-nav.nav {
         width: 100% !important;
+        max-width: 100% !important;
         height: auto !important;
     }
 
-    .header-svg-nav .container.nav-container {
-        position: relative !important;
+    .footer-svg-nav .container.nav-container {
+        position: static !important;
+        inset: auto !important;
         display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        scrollbar-width: none !important;
-        padding: 0.3rem !important;
-        justify-content: flex-start !important;
-        border-radius: 18px !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        padding: 0.5rem 0 !important;
+        border-radius: 0 !important;
     }
 
-    .header-svg-nav .container.nav-container::-webkit-scrollbar {
+    .footer-svg-nav .outline {
         display: none !important;
     }
 
-    .header-svg-nav .btn.nav-btn {
-        flex: 0 0 auto !important;
-        font-size: 0.72rem !important;
-        padding: 0.45rem 0.65rem !important;
-        white-space: nowrap !important;
-    }
-
-    .header-svg-nav .outline {
-        display: none !important;
-    }
-
-    #mainNav.main-phone-nav .navbar-brand {
-        display: none !important;
-    }
-
-    #mainNav.main-phone-nav .navbar-toggler {
-        display: none !important;
-    }
-
-    #mainNav.main-phone-nav .collapse:not(.show) {
-        display: block !important;
+    .footer-svg-nav .btn.nav-btn {
+        padding: 0.45rem 0.85rem !important;
+        font-size: 0.8rem !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 20px !important;
     }
 }
 
@@ -2614,3 +2358,38 @@ ul.social-icon-list {
     }
 }
 
+
+/* ==========================================================================
+   ENHANCED MOBILE POLISH & RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .portfolio-modal .modal-dialog {
+        margin: 0.5rem !important;
+        max-width: calc(100% - 1rem) !important;
+    }
+    .portfolio-modal .modal-body {
+        padding: 1.5rem 0.8rem !important;
+    }
+    .portfolio-modal .modal-body h2 {
+        font-size: 1.6rem !important;
+    }
+    .portfolio-modal .cert-card {
+        padding: 1.2rem 1rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-contact-form {
+        padding: 1.5rem 1rem !important;
+        border-radius: 18px !important;
+    }
+    .custom-contact-form #heading {
+        font-size: 1.35rem !important;
+    }
+    .custom-contact-form .field {
+        padding: 0.7rem 0.9rem !important;
+    }
+    .card-stack-item {
+        max-width: calc(100vw - 32px) !important;
+    }
+}

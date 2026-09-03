@@ -443,8 +443,15 @@
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const current = window.scrollY;
-            if (current > 300 && current > lastScroll) {
-                nav.style.transform = 'translateX(-50%) translateY(-180%)';
+            // On mobile devices, keep the Revolut bottom dock always accessible under the thumb
+            if (window.innerWidth < 992) {
+                nav.style.transform = 'translateX(-50%) translateY(0)';
+                nav.style.opacity = '1';
+                return;
+            }
+            // On desktop, smoothly hide when scrolling down and reveal when scrolling up
+            if (current > 150 && current > lastScroll) {
+                nav.style.transform = 'translateX(-50%) translateY(-150%)';
                 nav.style.opacity = '0';
             } else {
                 nav.style.transform = 'translateX(-50%) translateY(0)';
@@ -878,7 +885,8 @@
 
         function getCardSpacing() {
             const width = window.innerWidth;
-            if (width < 576) return 140;
+            if (width < 450) return 90;
+            if (width < 576) return 130;
             if (width < 768) return 180;
             return 260;
         }
