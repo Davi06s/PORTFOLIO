@@ -1997,8 +1997,9 @@ ul.social-icon-list {
         padding-bottom: 2.5rem !important;
     }
     .masthead .masthead-avatar {
-        width: 170px !important;
-        height: 170px !important;
+        width: clamp(195px, 58vw, 225px) !important;
+        height: clamp(195px, 58vw, 225px) !important;
+        aspect-ratio: 1 / 1 !important;
         margin-bottom: 1.25rem !important;
     }
     .masthead-heading {
