@@ -1862,28 +1862,39 @@ ul.social-icon-list {
 
     #mainNav.revolut-navbar {
         top: auto !important;
-        bottom: 14px !important;
-        bottom: max(14px, env(safe-area-inset-bottom, 14px)) !important;
+        bottom: 12px !important;
+        bottom: max(12px, env(safe-area-inset-bottom, 12px)) !important;
         left: 50% !important;
         transform: translateX(-50%) translateY(0) !important;
         width: calc(100% - 16px) !important;
-        max-width: 480px !important;
+        max-width: 440px !important;
         border-radius: 32px !important;
-        padding: 5px 6px !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        padding: 4px 4px !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-bottom: none !important;
+        box-sizing: border-box !important;
+        z-index: 1050 !important;
+    }
+
+    #mainNav.revolut-navbar * {
+        box-sizing: border-box !important;
     }
 
     .revolut-nav-container {
         padding: 0 !important;
         width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
     }
 
     .revolut-tab-bar {
         display: flex !important;
-        justify-content: space-around !important;
+        justify-content: space-between !important;
         align-items: center !important;
         width: 100% !important;
-        gap: 2px !important;
+        gap: 1px !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .revolut-tab {
@@ -1894,6 +1905,13 @@ ul.social-icon-list {
         justify-content: center !important;
         align-items: center !important;
         padding: 0 !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .revolut-tab::after {
+        display: none !important;
+        content: none !important;
     }
 
     .revolut-tab-pill {
@@ -1902,37 +1920,44 @@ ul.social-icon-list {
         align-items: center !important;
         justify-content: center !important;
         width: 100% !important;
-        padding: 6px 2px !important;
-        border-radius: 20px !important;
+        max-width: 100% !important;
+        padding: 6px 1px !important;
+        border-radius: 18px !important;
         border: 1px solid transparent !important;
-        transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
         cursor: pointer !important;
+        background: transparent !important;
     }
 
     .revolut-tab-icon {
-        font-size: 1.22rem !important;
+        font-size: 1.15rem !important;
         color: #8c96a5 !important;
         margin-bottom: 2px !important;
         transition: transform 0.2s ease, color 0.2s ease !important;
         line-height: 1 !important;
+        display: block !important;
     }
 
     .revolut-tab-label {
-        font-size: 0.65rem !important;
+        font-size: 0.62rem !important;
         color: #8c96a5 !important;
         font-weight: 500 !important;
         font-family: var(--font-heading) !important;
         letter-spacing: 0.2px !important;
         white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: 100% !important;
         line-height: 1.1 !important;
         transition: color 0.2s ease !important;
+        display: block !important;
     }
 
     /* Active Revolut Capsule Pill on Mobile (from image) */
     .revolut-tab.active .revolut-tab-pill {
-        background: rgba(255, 255, 255, 0.12) !important;
-        border: 1px solid rgba(0, 240, 255, 0.35) !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 12px rgba(0, 240, 255, 0.25) !important;
+        background: rgba(255, 255, 255, 0.14) !important;
+        border: 1px solid rgba(0, 240, 255, 0.4) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 12px rgba(0, 240, 255, 0.3) !important;
         transform: translateY(-2px) !important;
     }
 
@@ -1952,6 +1977,43 @@ ul.social-icon-list {
     #backToTop {
         bottom: 85px !important;
         right: 18px !important;
+    }
+}
+
+/* Smartphone Hero & General Polish (< 768px) */
+@media (max-width: 768px) {
+    .masthead {
+        padding-top: 4.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+    .masthead .masthead-avatar {
+        width: 170px !important;
+        height: 170px !important;
+        margin-bottom: 1.25rem !important;
+    }
+    .masthead-heading {
+        font-size: clamp(1.8rem, 6.5vw, 2.35rem) !important;
+        margin-bottom: 0.4rem !important;
+    }
+    .divider-custom {
+        margin: 0.75rem 0 !important;
+    }
+    .masthead-subheading {
+        font-size: 0.95rem !important;
+        min-height: 44px !important;
+        line-height: 1.4 !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .revolut-tab-icon {
+        font-size: 1.05rem !important;
+    }
+    .revolut-tab-label {
+        font-size: 0.56rem !important;
+    }
+    .revolut-tab-pill {
+        padding: 5px 1px !important;
     }
 }
 
