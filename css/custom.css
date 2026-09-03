@@ -1962,11 +1962,11 @@ ul.social-icon-list {
     }
 
     .revolut-tab-label {
-        font-size: 0.65rem !important;
+        font-size: clamp(0.58rem, 2.1vw, 0.65rem) !important;
         color: #cbd5e1 !important;
         font-weight: 600 !important;
         font-family: var(--font-heading) !important;
-        letter-spacing: 0.2px !important;
+        letter-spacing: 0.1px !important;
         white-space: nowrap !important;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
@@ -1974,6 +1974,7 @@ ul.social-icon-list {
         line-height: 1.1 !important;
         transition: color 0.2s ease !important;
         display: block !important;
+        text-align: center !important;
     }
 
     /* Active Revolut Capsule Pill on Mobile (from image) */
@@ -2045,110 +2046,7 @@ ul.social-icon-list {
     }
 }
 
-/* Footer SVG Nav (preserved for the footer quick links) */
-.footer-svg-nav.nav {
-    position: relative !important;
-    height: 60px !important;
-    width: 520px !important;
-    max-width: 100% !important;
-}
 
-.footer-svg-nav .container.nav-container {
-    position: absolute !important;
-    inset: 0 !important;
-    background: rgba(14, 18, 28, 0.85) !important;
-    backdrop-filter: blur(16px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-    border-radius: 12px !important;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-around !important;
-    align-items: center !important;
-    padding: 0.5em !important;
-}
-
-.footer-svg-nav .outline {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    pointer-events: none !important;
-    z-index: 2 !important;
-}
-
-.footer-svg-nav .rect {
-    stroke-dashoffset: 5 !important;
-    stroke-dasharray: 0 0 10 40 10 40 !important;
-    transition: 0.5s !important;
-    stroke: #00f0ff !important;
-    stroke-width: 4px !important;
-    fill: transparent !important;
-    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.8)) !important;
-}
-
-.footer-svg-nav .btn.nav-btn {
-    position: relative !important;
-    z-index: 3 !important;
-    padding: 0.5em 0.85em !important;
-    color: #e2f1fd !important;
-    cursor: pointer !important;
-    transition: 0.15s ease !important;
-    text-decoration: none !important;
-    font-family: var(--font-heading) !important;
-    font-weight: 700 !important;
-    font-size: 0.85rem !important;
-    letter-spacing: 1px !important;
-    text-transform: uppercase !important;
-    border-radius: 6px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    background: transparent !important;
-    border: none !important;
-    margin: 0 !important;
-}
-
-.footer-svg-nav .btn.nav-btn:hover {
-    background: rgba(0, 240, 255, 0.16) !important;
-    color: #ffffff !important;
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.7) !important;
-}
-
-/* ==========================================================================
-   FOOTER SVG NAV RESPONSIVE ADAPTATION (< 768px)
-   ========================================================================== */
-@media (max-width: 768px) {
-    .footer-svg-nav.nav {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-    }
-
-    .footer-svg-nav .container.nav-container {
-        position: static !important;
-        inset: auto !important;
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 0.5rem !important;
-        background: transparent !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        padding: 0.5rem 0 !important;
-        border-radius: 0 !important;
-    }
-
-    .footer-svg-nav .outline {
-        display: none !important;
-    }
-
-    .footer-svg-nav .btn.nav-btn {
-        padding: 0.45rem 0.85rem !important;
-        font-size: 0.8rem !important;
-        background: rgba(255, 255, 255, 0.05) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        border-radius: 20px !important;
-    }
-}
 
 /* ==========================================================================
    3D FANNED CARDSTACK PORTFOLIO CAROUSEL
