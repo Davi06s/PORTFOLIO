@@ -1748,15 +1748,15 @@ ul.social-icon-list {
 /* Desktop Presentation (>= 992px) - Sleek Floating Revolut Capsule Pill at the Top */
 @media (min-width: 992px) {
     #mainNav.revolut-navbar {
-        top: 18px !important;
+        top: 22px !important;
         bottom: auto !important;
         left: 50% !important;
         transform: translateX(-50%) translateY(0) !important;
-        width: auto !important;
-        min-width: 820px !important;
-        max-width: 1080px !important;
-        border-radius: 36px !important;
-        padding: 0.45rem 1.4rem !important;
+        width: calc(100% - 80px) !important;
+        max-width: 1140px !important;
+        border-radius: 40px !important;
+        padding: 0.5rem 1.75rem !important;
+        box-sizing: border-box !important;
     }
 
     .revolut-nav-container {
@@ -1764,7 +1764,9 @@ ul.social-icon-list {
         justify-content: space-between !important;
         align-items: center !important;
         width: 100% !important;
+        max-width: 100% !important;
         padding: 0 !important;
+        margin: 0 !important;
     }
 
     .revolut-navbar .navbar-brand {
@@ -1776,6 +1778,7 @@ ul.social-icon-list {
         text-decoration: none !important;
         transition: var(--transition-fast);
         margin: 0 !important;
+        flex-shrink: 0 !important;
     }
 
     .revolut-navbar .navbar-brand:hover {
@@ -1787,6 +1790,7 @@ ul.social-icon-list {
         display: flex !important;
         align-items: center !important;
         gap: 6px !important;
+        margin-left: auto !important;
     }
 
     .revolut-tab {
@@ -1800,7 +1804,7 @@ ul.social-icon-list {
         flex-direction: row !important;
         align-items: center !important;
         gap: 8px !important;
-        padding: 8px 16px !important;
+        padding: 7px 15px !important;
         border-radius: 20px !important;
         border: 1px solid transparent !important;
         transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -1815,10 +1819,10 @@ ul.social-icon-list {
     }
 
     .revolut-tab-label {
-        font-size: 0.85rem !important;
+        font-size: 0.84rem !important;
         font-weight: 600 !important;
         font-family: var(--font-heading) !important;
-        letter-spacing: 0.5px !important;
+        letter-spacing: 0.4px !important;
         color: #8e95a5 !important;
         transition: color 0.2s ease !important;
     }
@@ -1845,12 +1849,18 @@ ul.social-icon-list {
     .revolut-tab.active .revolut-tab-icon {
         color: var(--accent-primary) !important;
         filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.8)) !important;
-        transform: scale(1.1) !important;
+        transform: scale(1.08) !important;
     }
 
     .revolut-tab.active .revolut-tab-label {
         color: #ffffff !important;
         text-shadow: 0 0 8px rgba(0, 240, 255, 0.5) !important;
+    }
+
+    /* Masthead breathing room on desktop so the avatar is never occluded */
+    .masthead {
+        padding-top: 9.5rem !important;
+        padding-bottom: 5.5rem !important;
     }
 }
 
