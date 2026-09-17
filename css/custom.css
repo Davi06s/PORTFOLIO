@@ -50,6 +50,7 @@ html, body {
     max-width: 100% !important;
     position: relative;
     background-color: #05070a !important;
+    scroll-behavior: auto !important;
 }
 
 body {

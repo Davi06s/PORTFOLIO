@@ -1458,7 +1458,11 @@
             });
             backToTopBtn.addEventListener("click", (e) => {
                 e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (typeof ScrollSmoother !== 'undefined' && ScrollSmoother.get()) {
+                    ScrollSmoother.get().scrollTo(0, true);
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
             });
         }
     </script>

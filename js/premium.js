@@ -414,22 +414,53 @@
     }
 
     // ────────────────────────────────────────────────────────────────────────
-    // 8. SMOOTH SECTION NAVIGATION
+    // 8. SMOOTH SECTION NAVIGATION (FIX FOR DESKTOP NAVBAR BUG)
     // ────────────────────────────────────────────────────────────────────────
+    // Guard: Prevent the browser from natively scrolling #smooth-wrapper on hash jumps or focus
+    const smoothWrapperEl = document.getElementById('smooth-wrapper');
+    if (smoothWrapperEl) {
+        smoothWrapperEl.addEventListener('scroll', () => {
+            if (smoothWrapperEl.scrollTop !== 0) smoothWrapperEl.scrollTop = 0;
+            if (smoothWrapperEl.scrollLeft !== 0) smoothWrapperEl.scrollLeft = 0;
+        }, { passive: false });
+    }
+
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             const targetId = link.getAttribute('href');
-            if (targetId === '#' || targetId === '#page-top') return;
+            if (!targetId || targetId === '#') {
+                e.preventDefault();
+                return;
+            }
+
+            e.preventDefault();
+
+            // Handle Top of Page navigation (Logo & BackToTop)
+            if (targetId === '#page-top') {
+                if (smoother) {
+                    smoother.scrollTo(0, true);
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+                if (window.history && window.history.pushState) {
+                    window.history.pushState(null, '', window.location.pathname);
+                }
+                return;
+            }
+
             const targetEl = document.querySelector(targetId);
             if (targetEl) {
                 if (smoother) {
-                    smoother.scrollTo(targetEl, true, "top 70px");
+                    smoother.scrollTo(targetEl, true, "top 80px");
                 } else {
                     gsap.to(window, {
-                        scrollTo: { y: targetEl, offsetY: 70 },
+                        scrollTo: { y: targetEl, offsetY: 80 },
                         duration: 1,
                         ease: 'power2.inOut'
                     });
+                }
+                if (window.history && window.history.pushState) {
+                    window.history.pushState(null, '', targetId);
                 }
             }
         });
@@ -740,12 +771,11 @@
     }
 
     // ────────────────────────────────────────────────────────────────────────
-    // 16. CONTINUOUS 3D SCROLL TRANSITIONS (APERTURA E CHIUSURA DI OGNI SEZIONE)
+    // 16. SECTION HEADINGS AMBIENT GLOW & TEXT CLIPPING FIX
     // ────────────────────────────────────────────────────────────────────────
     const fullScreenSections = document.querySelectorAll('section[id], header.masthead');
     fullScreenSections.forEach(section => {
         const heading = section.querySelector('.page-section-heading, .masthead-heading');
-        const items = section.querySelectorAll('.service-item, .portfolio-item, .timeline-content, .cert-card, .stat-item, .project-stack-card, .badge, .reveal-item');
 
         // Fix text clipping block glitches on headings
         if (heading) {
@@ -766,67 +796,6 @@
                 const glow = document.createElement('div');
                 glow.className = 'heading-ambient-glow';
                 heading.prepend(glow);
-            }
-        }
-
-        if (!prefersReduced) {
-            // Section Apertura (enter) & Chiusura (exit) Timeline
-            const sectionTl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top bottom-=50',
-                    end: 'bottom top+=50',
-                    scrub: 0.7
-                }
-            });
-
-            // Phase 1: Apertura (Scale up + Fade in + Perspective rotateX into view)
-            sectionTl.fromTo(section,
-                { opacity: 0.15, scale: 0.85, rotateX: 12, y: 80 },
-                { opacity: 1.0, scale: 1.0, rotateX: 0, y: 0, ease: 'power2.out', duration: 0.5 }
-            )
-            // Phase 2: Chiusura (Scale down + Fade out + Perspective rotateX out of view)
-            .to(section,
-                { opacity: 0.15, scale: 0.85, rotateX: -12, y: -80, ease: 'power2.in', duration: 0.5 }
-            );
-
-            // Heading & Internal Items Spring Stagger Reveal
-            if (heading) {
-                gsap.fromTo(heading,
-                    { opacity: 0, y: 50, scale: 0.88, rotateX: 15 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        rotateX: 0,
-                        duration: 0.9,
-                        ease: 'back.out(1.5)',
-                        scrollTrigger: {
-                            trigger: section,
-                            start: 'top 75%',
-                            toggleActions: 'play reverse play reverse'
-                        }
-                    }
-                );
-            }
-
-            if (items.length) {
-                gsap.fromTo(items,
-                    { opacity: 0, y: 40, scale: 0.92 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.8,
-                        stagger: 0.1,
-                        ease: 'power3.out',
-                        scrollTrigger: {
-                            trigger: section,
-                            start: 'top 70%',
-                            toggleActions: 'play reverse play reverse'
-                        }
-                    }
-                );
             }
         }
     });
