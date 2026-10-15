@@ -474,10 +474,10 @@
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const current = window.scrollY;
-            // On mobile devices, keep the Revolut bottom dock always accessible under the thumb
+            // On mobile devices, keep CSS in control for smooth Revolut dock transitions
             if (window.innerWidth < 992) {
-                nav.style.transform = 'translateX(-50%) translateY(0)';
-                nav.style.opacity = '1';
+                nav.style.transform = '';
+                nav.style.opacity = '';
                 return;
             }
             // On desktop, smoothly hide when scrolling down and reveal when scrolling up

@@ -1893,10 +1893,17 @@ ul.social-icon-list {
         backdrop-filter: blur(24px) saturate(190%) !important;
         -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
         border: 1px solid rgba(255, 255, 255, 0.12) !important;
-        border-bottom: none !important;
         box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85), 0 0 20px rgba(0, 240, 255, 0.15) !important;
         box-sizing: border-box !important;
         z-index: 1050 !important;
+        transition: max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    min-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    padding 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-radius 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    background 0.3s ease,
+                    bottom 0.35s ease,
+                    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
 
     #mainNav.revolut-navbar * {
@@ -1918,6 +1925,7 @@ ul.social-icon-list {
         gap: 2px !important;
         margin: 0 !important;
         padding: 0 !important;
+        transition: gap 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
 
     .revolut-tab {
@@ -1944,10 +1952,16 @@ ul.social-icon-list {
         justify-content: center !important;
         width: 100% !important;
         max-width: 100% !important;
-        padding: 5px 2px !important;
+        padding: 6px 2px 4px 2px !important;
         border-radius: 18px !important;
         border: 1px solid transparent !important;
-        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        min-height: 52px !important;
+        transition: padding 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    min-height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    background 0.25s ease,
+                    border-color 0.25s ease,
+                    box-shadow 0.25s ease,
+                    border-radius 0.3s ease !important;
         cursor: pointer !important;
         background: transparent !important;
         box-sizing: border-box !important;
@@ -1957,7 +1971,10 @@ ul.social-icon-list {
         font-size: 1.25rem !important;
         color: #cbd5e1 !important;
         margin-bottom: 2px !important;
-        transition: transform 0.2s ease, color 0.2s ease !important;
+        transition: font-size 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    margin 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    color 0.2s ease !important;
         line-height: 1 !important;
         display: block !important;
     }
@@ -1972,8 +1989,16 @@ ul.social-icon-list {
         overflow: hidden !important;
         text-overflow: ellipsis !important;
         max-width: 100% !important;
+        max-height: 18px !important;
         line-height: 1.1 !important;
-        transition: color 0.2s ease !important;
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+        margin-top: 1px !important;
+        transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                    max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                    margin 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                    color 0.2s ease !important;
         display: block !important;
         text-align: center !important;
     }
@@ -1997,6 +2022,56 @@ ul.social-icon-list {
         color: #ffffff !important;
         font-weight: 700 !important;
         text-shadow: 0 0 6px rgba(0, 240, 255, 0.5) !important;
+    }
+
+    /* ==========================================================================
+       REVOLUT MOBILE SCROLL-DOWN COMPACT STATE
+       When user scrolls down: icons shrink, labels disappear, dock gets tighter.
+       When user scrolls back up: returns to normal expanded state.
+       ========================================================================== */
+    #mainNav.revolut-navbar.nav-compact,
+    #mainNav.revolut-navbar.navbar-compact {
+        min-height: 48px !important;
+        max-width: 350px !important;
+        padding: 4px 6px !important;
+        border-radius: 28px !important;
+        bottom: 14px !important;
+        bottom: max(14px, env(safe-area-inset-bottom, 14px)) !important;
+        background: rgba(9, 13, 20, 0.96) !important;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.92), 0 0 24px rgba(0, 240, 255, 0.22) !important;
+    }
+
+    #mainNav.revolut-navbar.nav-compact .revolut-tab-bar,
+    #mainNav.revolut-navbar.navbar-compact .revolut-tab-bar {
+        gap: 3px !important;
+    }
+
+    #mainNav.revolut-navbar.nav-compact .revolut-tab-pill,
+    #mainNav.revolut-navbar.navbar-compact .revolut-tab-pill {
+        min-height: 38px !important;
+        padding: 6px 2px !important;
+        border-radius: 20px !important;
+    }
+
+    #mainNav.revolut-navbar.nav-compact .revolut-tab-icon,
+    #mainNav.revolut-navbar.navbar-compact .revolut-tab-icon {
+        font-size: 1.02rem !important; /* Shrunk icons on scroll down */
+        margin-bottom: 0 !important;
+    }
+
+    #mainNav.revolut-navbar.nav-compact .revolut-tab.active .revolut-tab-icon,
+    #mainNav.revolut-navbar.navbar-compact .revolut-tab.active .revolut-tab-icon {
+        transform: scale(1.1) !important;
+    }
+
+    #mainNav.revolut-navbar.nav-compact .revolut-tab-label,
+    #mainNav.revolut-navbar.navbar-compact .revolut-tab-label {
+        max-height: 0 !important;
+        opacity: 0 !important;
+        transform: translateY(6px) scale(0.6) !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        pointer-events: none !important;
     }
 
     /* Shift back to top button up on mobile so it doesn't collide with the dock */
@@ -2044,6 +2119,15 @@ ul.social-icon-list {
     }
     .revolut-tab-pill {
         padding: 5px 1px !important;
+    }
+
+    #mainNav.revolut-navbar.nav-compact,
+    #mainNav.revolut-navbar.navbar-compact {
+        max-width: 320px !important;
+    }
+    #mainNav.revolut-navbar.nav-compact .revolut-tab-icon,
+    #mainNav.revolut-navbar.navbar-compact .revolut-tab-icon {
+        font-size: 0.95rem !important;
     }
 }
 
